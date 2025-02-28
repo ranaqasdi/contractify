@@ -72,11 +72,11 @@ function Forms(props) {
                         </Link>
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                        <Link href={"/forms/influencer-contract"}>
-                            <img className='w-full h-[250px] object-cover object-top' src="/images/influencer-contract01.png" alt="" />
+                        <Link href={"/forms/lease"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/lease01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-purple-950 font-semibold text-xl'>Influencer Contract Template</h2>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Property Rental Template</h2>
                                 <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                             </div>
                         </Link>

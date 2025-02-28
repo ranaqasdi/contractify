@@ -17,31 +17,31 @@ function page(props) {
     <h2 className="text-blue-950 mb-12 font-bold text-3xl" >Which Template Of Document You Like The Most?</h2>
         <div className='flex w-[70%] justify-between gap-x-14'>
             <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
-                <Link href={"/forms/nda-forms/1"}>
-                <img className='w-full h-[250px] object-cover object-top' src="/images/nda-form01.png" alt="" />
+                <Link href={"/forms/lease/1"}>
+                <img className='w-full h-[250px] object-cover object-top' src="/images/lease01.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT Template</h2>
+                <h2 className='text-blue-950 font-semibold text-xl'>Property Rental Template</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                 </div>
                 </Link>
             </div>
             <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
-            <Link href={"/forms/nda-forms/2"}>
-                <img className='w-full h-[250px] object-cover object-top' src="/images/nda02.png" alt="" />
+            <Link href={"/"}>
+                <img className='w-full h-[250px] object-cover object-top' src="/images/5.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT & Confidentiality  Template</h2>
+                <h2 className='text-blue-950 font-semibold text-xl'>Template 2</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                 </div>
                 </Link>
             </div>
             <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
-            <Link href={"/forms/nda-forms/3"}>
-                <img className='w-full h-[250px] object-cover object-top' src="/images/nda03.png" alt="" />
+            <Link href={"/"}>
+                <img className='w-full h-[250px] object-cover object-top' src="/images/5.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT Template</h2>
+                <h2 className='text-blue-950 font-semibold text-xl'>Template 3</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                 </div>
                 </Link>
@@ -50,12 +50,12 @@ function page(props) {
 
         </div>
     </section>
-    {/* <div className='flex justify-center items-center h-screen'>
+    <div className='flex justify-center items-center h-screen'>
         <button className='bg-green-500 py-5 px-12 '>
             <Link href="/forms/nda-forms" >New NDA Form</Link>
 
         </button>
-    </div> */}
+    </div>
 </>
   )
 }
