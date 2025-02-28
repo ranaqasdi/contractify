@@ -14,39 +14,75 @@ function Forms(props) {
             </section>
 
             <section className='flex items-center flex-col py-20'>
-                    <h2 className="text-purple-800 mb-12 font-bold text-3xl" >Which Type Of Document You Want To Generate?</h2>
+                <h2 className="text-purple-800 mb-12 font-bold text-3xl" >Which Type Of Document You Want To Generate?</h2>
                 <div className='flex w-[70%] justify-between gap-x-14'>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
                         <Link href={"/forms/nda-forms"}>
-                        <img  className='w-full h-[250px] object-cover object-top' src="/images/nda-form01.png" alt="" />
-                        <div className=' py-5 px-6'>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/nda-form01.png" alt="" />
+                            <div className=' py-5 px-6'>
 
-                        <h2 className='text-purple-950 font-semibold text-xl'>NDA FORMS</h2>
-                        <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
-                        </div>
+                                <h2 className='text-purple-950 font-semibold text-xl'>NDA FORMS</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
                         </Link>
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                    <Link href={"/"}>
-                        <img className='w-full h-[250px] object-cover object-top' src="/images/5.png" alt="" />
-                        <div className=' py-5 px-6'>
+                        <Link href={"/forms/employment"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/employment1.png" alt="" />
+                            <div className=' py-5 px-6'>
 
-                        <h2 className='text-purple-950 font-semibold text-xl'>Boarding Pass Template</h2>
-                        <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
-                        </div>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Employment Contract Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
                         </Link>
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                    <Link href={"/"}>
-                        <img className='w-full h-[250px] object-cover object-top'  src="/images/5.png" alt="" />
-                        <div className=' py-5 px-6'>
+                        <Link href={"/forms/influencer-contract"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/influencer-contract01.png" alt="" />
+                            <div className=' py-5 px-6'>
 
-                        <h2 className='text-purple-950 font-semibold text-xl'>Boarding Pass Template</h2>
-                        <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
-                        </div>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Influencer Contract Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
                         </Link>
                     </div>
-                   
+                    
+
+
+                </div>
+                <div className='flex w-[70%] justify-between gap-x-14 mt-14'>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/resume"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/resume01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Resume Templates</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/estimate"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/estimate01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Estimate Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/influencer-contract"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/influencer-contract01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Influencer Contract Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    
+
 
                 </div>
             </section>
