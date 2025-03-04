@@ -1,12 +1,17 @@
 "use client";
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 // import axios from "axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 
 export default function Home() {
+  const editor = useRef(null);
+  const [content, setContent] = useState("");
+
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
     DisclosingName: "John Deo",
@@ -90,12 +95,7 @@ export default function Home() {
     <div class="section">
         <h2>WORK EXPERIENCE</h2>
         <p><strong>Guest Relations Coordinator, Buca di Beppo, Orlando, FL</strong> (August 2005-Present)</p>
-        <ul>
-            <li>Collaborate with management to alleviate client concerns and anticipate any potential issues.</li>
-            <li>Organize private and semi-private banquet functions for various weekly events within the restaurant.</li>
-            <li>Execute daily management-level responsibilities, with a focus on easing the guest experience.</li>
-            <li>Assist with weekly inventory procedures to ensure proper amounts of materials are on hand.</li>
-        </ul>
+        ${content}
         
         <p><strong>Restaurant Supervisor, Orlando Airport Marriott, Orlando, FL</strong> (August 2004-August 2005)</p>
         <ul>
@@ -177,6 +177,11 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <JoditEditor
+            ref={editor}
+            value={content}
+            onChange={(newContent) => setContent(newContent)}
+          />
           <input
             type="date"
             name="issuedDate"
@@ -232,7 +237,7 @@ export default function Home() {
             placeholder="Enter Receiving Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-         
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
