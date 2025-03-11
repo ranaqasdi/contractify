@@ -159,11 +159,7 @@ export default function Home() {
             <h3>Employee Details</h3>
             <p><strong>Name:</strong> ${formData.yourName}</p>
             <p><strong>Department:</strong> ${formData.Department}</p>
-<<<<<<< HEAD
             <p><strong>Employee ID:</strong> ${formData.EmployeeID}</p>
-=======
-            <p><strong>Employee ID:</strong> ${formData.Department}</p>
->>>>>>> e1556c5b46239d44adc939f6d73c9d6f124f4a88
             <p><strong>Reporting Period:</strong> ${formData.startTime} - ${formData.endTime}</p>
         </div>
 
@@ -288,7 +284,6 @@ export default function Home() {
             placeholder="Enter Department Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-<<<<<<< HEAD
           <label htmlFor="" className="-mb-4">Enter Employee ID</label>
           <input
             type="text"
@@ -297,9 +292,7 @@ export default function Home() {
             onChange={handleChange}
             placeholder="Enter Employee ID "
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-=======
->>>>>>> e1556c5b46239d44adc939f6d73c9d6f124f4a88
+          /> 
           <label htmlFor="" className="-mb-4">Enter Start Time</label>
           <input
             type="date" name="startTime"
