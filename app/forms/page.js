@@ -7,8 +7,8 @@ function Forms(props) {
         <>
             <section className='flex justify-center pt-36 pb-16 bg-[url(/images/4.png)] bg-cover bg-no-repeat bg-center'>
                 <div className='flex w-[70%] justify-center items-center flex-col gap-y-4'>
-                    <h2 className="text-purple-600 font-semibold text-6xl">1,800+ Jotform PDF Templates</h2>
-                    <h2 className="text-purple-950 font-medium text-xl">With hundreds of templates for just as many industries, Jotform has the tools to meet your unique business needs.</h2>
+                    <h2 className="text-purple-600 font-semibold text-6xl">1,800+ Templik PDF Templates</h2>
+                    <h2 className="text-purple-950 font-medium text-xl">With hundreds of templates for just as many industries, Templik has the tools to meet your unique business needs.</h2>
 
                 </div>
             </section>

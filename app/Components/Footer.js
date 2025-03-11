@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
@@ -8,9 +9,11 @@ export default function Footer() {
 
                 {/* Left - Company Info */}
                 <div className="pr-10">
-                    <h2 className="text-2xl font-bold">YourCompany</h2>
-                    <p className="text-gray-400 mt-2">
-                        We provide the best services for your business growth.
+                    <Link href="/" className="text-xl font-bold text-gray-800">
+                        <img src="/images/logo-dark.webp" alt="" className='w-[200px] h-[60px] object-cover' />
+                    </Link>
+                    <p className="text-gray-200 mt-2">
+                    TEMPLIK The Easiest Online Form Builder, Powerful forms get it done.
                     </p>
                 </div>
 
@@ -38,10 +41,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold">Follow Us</h3>
                     <div className="flex mt-2 space-x-4">
-                        <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaFacebook /></a>
-                        <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaTwitter /></a>
-                        <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaInstagram /></a>
-                        <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaLinkedin /></a>
+                        <a href="https://www.facebook.com/share/18oghwwZyE/?mibextid=wwXIfr" className="text-gray-200 hover:text-white text-2xl"><FaFacebook /></a>
+                        <a href="https://www.instagram.com/usetemplik" className="text-gray-200 hover:text-white text-2xl"><FaInstagram /></a>
+                        <a href="#" className="text-gray-200 hover:text-white text-2xl"><FaTwitter /></a>
+                        <a href="#" className="text-gray-200 hover:text-white text-2xl"><FaLinkedin /></a>
                     </div>
                 </div>
 
@@ -49,7 +52,7 @@ export default function Footer() {
 
             {/* Bottom - Copyright */}
             <div className="mt-8 text-center text-purple-300 border-t border-gray-700 pt-4">
-                © {new Date().getFullYear()} YourCompany. All rights reserved | Developed By <a href="https://xtreamstudios.com/" target="_blank">Xtream Studios</a>.
+                © {new Date().getFullYear()} Templik. All rights reserved | Developed By <a href="https://xtreamstudios.com/" target="_blank">Xtream Studios</a>.
             </div>
         </footer>
     );

@@ -11,7 +11,7 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-gray-800">
-          MyLogo
+          <img src="/images/logo.png" alt="" className='w-[200px] h-[60px] object-cover'  />
         </Link>
         
         <nav className="hidden md:flex space-x-6">

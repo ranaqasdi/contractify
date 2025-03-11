@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <section className="flex justify-center py-20 ">
         <div className="flex flex-col items-center w-[70%] gap-y-4">
-          <h2 className="text-purple-500 font-semibold text-xl">EASIEST ONLINE FORM BUILDER</h2>
+          <h2 className="text-purple-500 font-semibold text-xl">TEMPLIK THE EASIEST ONLINE FORM BUILDER</h2>
           <h2 className="text-purple-950 font-semibold text-6xl">Powerful forms get it done.</h2>
           <p className="text-3xl font-medium text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
           <Link href={"/forms"}>
