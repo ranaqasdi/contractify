@@ -1,20 +1,29 @@
 "use client";
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 // import axios from "axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 
 export default function Home() {
+  const editor = useRef(null);
+  const [SOW, setSOW] = useState(" <ul> <li>Detailed description of the tasks, including deliverables.</li><li>Timeframe and milestones for completion.</li><li>Any additional services that may be required.</li> </ul>")
+  const [PaymentTerms, setPaymentTerms] = useState("  <ul><li>Total agreed payment: <strong>$1500</strong> </li><li>Payment method: <strong>PayPal </strong></li><li>Milestone or installment-based payments, if applicable.</li><li>Late payment penalties or interest charges.</li></ul>")
+
+
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
-    DisclosingName: "John Deo",
-    DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
-    ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
-    DISCLOSINGDate: "2025-02-07",
-    RECEIVINGDate: "2025-02-07",
+    FreelancerName: "John Deo",
+    ClientName: "Mark David",
+    ProjectName: "Templik Website",
+    StartDate: "2025-02-07",
+    EndDate: "2025-03-11",
+    Revisions: "3",
+    Notice: "10",
+    Jurisdiction: "California",
   });
   const [pdfUrl, setPdfUrl] = useState("");
 
@@ -44,158 +53,103 @@ export default function Home() {
     }
   };
 
+  const config = {
+    buttons: ["bold", "italic", "underline", "ul", "ol", "fontsize"],
+    toolbarAdaptive: false, // Keeps the toolbar fixed
+    showXPathInStatusbar: false,
+    // Hides unnecessary UI elements
+  };
+
+
   const rawHtml = () => {
     return `<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Non-Disclosure Agreement</title>
+    <title>Freelance Contract</title>
     <style>
         body {
-        background-color:white;
             font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
+             background: #fff;
+            padding: 60px;
+        
         }
-
-        h1,
-        h2 {
+       
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: left;
         }
-
-        .section {
-            margin-bottom: 20px;
+        th {
+            background: #0073e6;
+            color: #fff;
         }
-
         .signature {
-            margin-top: 40px;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature div {
+            width: 45%;
+            text-align: center;
+            border-top: 2px solid #000;
+            padding-top: 10px;
         }
     </style>
 </head>
-
-<body >
-    <h1 style="text-align:center">NON-DISCLOSURE AGREEMENT (NDA)</h1>
-    <p>This Nondisclosure Agreement or ("Agreement") has been entered into on the date of
-        <u><b>${formData.issuedDate}</b></u>  and is by and between:</p>
-
-    <div class="section">
-        <p><strong>Party Disclosing Information:</strong> <u><b>${formData.DisclosingName}</b></u>  with a mailing address of
-            <u><b>${formData.DisclosingAddress}</b></u>  (“Disclosing Party”).</p>
-        <p><strong>Party Receiving Information:</strong> <u><b>${formData.ReceivingName}</b></u>  with a mailing address of
-            <u><b>${formData.ReceivingAddress}</b></u>  (“Receiving Party”).</p>
-    </div>
-
-    <div class="section">
-        <h2>1. Definition of Confidential Information</h2>
-        <p>For purposes of this Agreement, "Confidential
-            Information" shall include all information or material that has or could have commercial value or
-            other utility in the business in which Disclosing Party is engaged. If Confidential Information is in
-            written form, the Disclosing Party shall label or stamp the materials with the word "Confidential"
-            or some similar warning. If Confidential Information is transmitted orally, the Disclosing Party
-            shall promptly provide writing indicating that such oral communication constituted Confidential
-            Information.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>2. Exclusions from Confidential Information</h2>
-        <p> Receiving Party's obligations under this
-            Agreement do not extend to information that is: (a) publicly known at the time of disclosure or
-            subsequently becomes publicly known through no fault of the Receiving Party; (b) discovered or
-            created by the Receiving Party before disclosure by Disclosing Party; (c) learned by the
-            Receiving Party through legitimate means other than from the Disclosing Party or Disclosing
-            Party's representatives; or (d) is disclosed by Receiving Party with Disclosing Party's prior
-            written approval.</p>
-
-    </div>
-
-    <div class="section">
-        <h2>3. Obligations of Receiving Party</h2>
-        <p> Receiving Party shall hold and maintain the Confidential
-            Information in strictest confidence for the sole and exclusive benefit of the Disclosing Party.
-            Receiving Party shall carefully restrict access to Confidential Information to employees,
-            contractors and third parties as is reasonably required and shall require those persons to sign
-            nondisclosure restrictions at least as protective as those in this Agreement. Receiving Party
-            shall not, without the prior written approval of Disclosing Party, use for Receiving Party's benefit,
-            publish, copy, or otherwise disclose to others, or permit the use by others for their benefit or to
-            the detriment of Disclosing Party, any Confidential Information. Receiving Party shall return to
-            Disclosing Party any and all records, notes, and other written, printed, or tangible materials in its
-            possession pertaining to Confidential Information immediately if Disclosing Party requests it in
-            writing.</p>
-    </div>
-
-    <div class="section">
-        <h2>4. Time Periods</h2>
-        <p> The nondisclosure provisions of this Agreement shall survive the termination
-            of this Agreement and Receiving Party's duty to hold Confidential Information in confidence
-            shall remain in effect until the Confidential Information no longer qualifies as a trade secret or
-            until Disclosing Party sends Receiving Party written notice releasing Receiving Party from this
-            Agreement, whichever occurs first.</p>
-    </div>
-
-    <div class="section">
-        <h2>5. Relationships</h2>
-        <p>Nothing contained in this Agreement shall be deemed to constitute either
-            party a partner, joint venture or employee of the other party for any purpose.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>6. Severability</h2>
-        <p>If a court finds any provision of this Agreement invalid or unenforceable, the
-            remainder of this Agreement shall be interpreted so as best to affect the intent of the parties.</p>
-    </div>
-
-    <div class="section">
-        <h2>7. Integration</h2>
-        <p>This Agreement expresses the complete understanding of the parties with
-            respect to the subject matter and supersedes all prior proposals, agreements, representations,
-            and understandings. This Agreement may not be amended except in writing signed by both
-            parties.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>8. Waiver</h2>
-        <p>The failure to exercise any right provided in this Agreement shall not be a waiver of
-            prior or subsequent rights.</p>
-    </div>
-
-    <div class="section">
-        <h2>9. Notice of Immunity</h2>
-        <p> Employee is provided notice that an individual shall not be held
-            criminally or civilly liable under any federal or state trade secret law for the disclosure of a trade
-            secret that is made (i) in confidence to a federal, state, or local government official, either
-            directly or indirectly, or to an attorney; and (ii) solely for the purpose of reporting or investigating
-            a suspected violation of law; or is made in a complaint or other document filed in a lawsuit or
-            other proceeding, if such filing is made under seal. An individual who files a lawsuit for
-            retaliation by an employer for reporting a suspected violation of law may disclose the trade
-            secret to the attorney of the individual and use the trade secret information in the court
-            proceeding, if the individual (i) files any document containing the trade secret under seal; and (ii)
-            does not disclose the trade secret, except pursuant to court order</p>
-    
-        <p>This Agreement and each party's obligations shall be binding on the representatives, assigns
-            and successors of such party. Each party has signed this Agreement through its authorized
-            representative.
-        </p>
-    </div>
-
-    <div class="signature">
-        <p><strong>DISCLOSING PARTY</strong></p>
-  
-        <p>Name: <u><b>${formData.DisclosingName}</b></u>&nbsp;&nbsp;Date: <u><b>${formData.DISCLOSINGDate}</b></u></p>
-    </div>
-
-    <div class="signature">
-        <p><strong>RECEIVING PARTY</strong></p>
-
-        <p>Name: <u><b>${formData.ReceivingName}</b></u>&nbsp;&nbsp;Date: <u><b>${formData.RECEIVINGDate}</b></u></p>
+<body>
+    <div class="contract">
+        <h1>Freelance Contract</h1>
+        <h2>Agreement between Freelancer and Client</h2>
+        <p>This agreement ("Agreement") is made and entered into as of <strong>${formData.issuedDate}</strong> by and between:</p>
+        <p>Freelancer: <strong>${formData.FreelancerName}</strong>, an independent contractor providing professional services.</p>
+        <p>Client: <strong>${formData.ClientName}</strong>, engaging the services of the Freelancer for the purpose of <strong>${formData.ProjectName}</strong>.</p>
+        <h3>1. Scope of Work</h3>
+        <p>The Freelancer agrees to perform the following services:</p>
+       ${SOW}
+        <h3>2. Payment Terms</h3>
+        <p>The Client agrees to compensate the Freelancer as follows:</p>
+       ${PaymentTerms}
+        <h3>3. Timeline</h3>
+        <p>The project will begin on <strong>${formData.StartDate}</strong> and is expected to be completed by <strong>${formData.EndDate}</strong>. Any delays will be communicated in writing.</p>
+        <h3>4. Confidentiality</h3>
+        <p>The Freelancer agrees not to disclose, share, or use any proprietary or confidential information obtained during the project for any purpose other than fulfilling the obligations under this Agreement.</p>
+        <h3>5. Ownership & Rights</h3>
+        <p>Upon full payment, the Client will obtain full ownership and rights to all work produced by the Freelancer. Until full payment is made, all rights remain with the Freelancer.</p>
+        <h3>6. Revisions & Modifications</h3>
+        <p>The Freelancer will provide up to <strong>${formData.Revisions}</strong> revisions. Additional revisions may incur extra charges.</p>
+        <h3>7. Termination</h3>
+        <p>Either party may terminate this Agreement with <strong>${formData.Notice}</strong> days' written notice. In case of termination, any completed work must be compensated accordingly.</p>
+        <h3>8. Indemnification</h3>
+        <p>Both parties agree to indemnify and hold harmless the other from any claims, damages, or legal expenses that arise due to negligence or failure to meet obligations under this Agreement.</p>
+        <h3>9. Dispute Resolution</h3>
+        <p>Any disputes will be resolved through mediation or arbitration as agreed upon by both parties. If unresolved, legal action may be pursued under the governing law of <strong>${formData.Jurisdiction}</strong>.</p>
+        <h3>10. Entire Agreement</h3>
+        <p>This Agreement constitutes the entire agreement between the parties and supersedes all prior discussions, communications, and agreements.</p>
+        <div class="signature">
+            <div>
+                Client Signature<br>
+                ${formData.ClientName}
+            </div>
+            <div>
+                Freelancer Signature<br>
+                ${formData.FreelancerName}
+            </div>
+        </div>
     </div>
 </body>
-
-</html>`;
+</html>
+`;
   };
 
 
@@ -238,52 +192,81 @@ export default function Home() {
           />
           <input
             type="text"
-            name="DisclosingName"
-            value={formData.DisclosingName}
+            name="FreelancerName"
+            value={formData.FreelancerName}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Name"
+            placeholder="Enter Freelancer Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
           <input
             type="text"
-            name="DisclosingAddress"
-            value={formData.DisclosingAddress}
+            name="ClientName"
+            value={formData.ClientName}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Address"
+            placeholder="Enter Client Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
           <input
             type="text"
-            name="ReceivingName"
-            value={formData.ReceivingName}
+            name="ProjectName"
+            value={formData.ProjectName}
             onChange={handleChange}
-            placeholder="Enter Receiving Party's Name"
+            placeholder="Enter Project Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <input
-            type="text" name="ReceivingAddress"
 
-            value={formData.ReceivingAddress}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <label htmlFor="" className="-mb-4">Details About Responsibilities</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={SOW}
+            onBlur={(newContent) => setSOW(newContent)}
+          />
+          <label htmlFor="" className="-mb-4">Details About Responsibilities</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={PaymentTerms}
+            onBlur={(newContent) => setPaymentTerms(newContent)}
           />
           <input
-            type="date" name="DISCLOSINGDate"
+            type="date" name="StartDate"
 
-            value={formData.DISCLOSINGDate}
+            value={formData.StartDate}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party Date"
+            placeholder="Enter Start Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
           <input
-            type="date" name="RECEIVINGDate"
-            value={formData.RECEIVINGDate}
+            type="date" name="EndDate"
+
+            value={formData.EndDate}
             onChange={handleChange}
-            placeholder="Enter Receiving Party Date"
+            placeholder="Enter End Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-         
+          <input
+            type="text" name="Revisions"
+            value={formData.Revisions}
+            onChange={handleChange}
+            placeholder="Enter Number of Revisions"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <input
+            type="text" name="Notice"
+            value={formData.Notice}
+            onChange={handleChange}
+            placeholder="Enter Notice Period (days)"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <input
+            type="text" name="Jurisdiction"
+            value={formData.Jurisdiction}
+            onChange={handleChange}
+            placeholder="Enter Jurisdiction"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"

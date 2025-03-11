@@ -89,33 +89,33 @@ function Forms(props) {
                 </div>
 
 
-                {/* <div className='flex w-[70%] justify-between gap-x-14 mt-14'>
+                <div className='flex w-[70%] justify-between gap-x-14 mt-14'>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                        <Link href={"/forms/lease/1"}>
-                            <img className='w-full h-[250px] object-cover object-top' src="/images/resume01.png" alt="" />
+                        <Link href={"/forms/freelance/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/freelance01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-purple-950 font-semibold text-xl'>Property Lease Templates</h2>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Freelance Contract</h2>
                                 <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                             </div>
                         </Link>
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                        <Link href={"/forms/estimate/1"}>
-                            <img className='w-full h-[250px] object-cover object-top' src="/images/estimate01.png" alt="" />
+                        <Link href={"/forms/business/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/business01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-purple-950 font-semibold text-xl'>Estimate Template</h2>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Business Plan Template</h2>
                                 <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                             </div>
                         </Link>
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
-                        <Link href={"/forms/lease/1"}>
-                            <img className='w-full h-[250px] object-cover object-top' src="/images/lease01.png" alt="" />
+                        <Link href={"/forms/invoice/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/invoice01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-purple-950 font-semibold text-xl'>Property Rental Template</h2>
+                                <h2 className='text-purple-950 font-semibold text-xl'>Invoice Template</h2>
                                 <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                             </div>
                         </Link>
@@ -123,8 +123,46 @@ function Forms(props) {
                     
 
 
-                </div> */}
+                </div>
+                
+                <div className='flex w-[70%] justify-between gap-x-14 mt-14'>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/expense/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/expense01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Expense Report Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/business/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/business01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Business Plan Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+                        <Link href={"/forms/invoice/1"}>
+                            <img className='w-full h-[250px] object-cover object-top' src="/images/invoice01.png" alt="" />
+                            <div className=' py-5 px-6'>
+
+                                <h2 className='text-purple-950 font-semibold text-xl'>Invoice Template</h2>
+                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                            </div>
+                        </Link>
+                    </div>
+                    
+
+
+                </div>
             </section>
+
+
             {/* <div className='flex justify-center items-center h-screen'>
                 <button className='bg-green-500 py-5 px-12 '>
                     <Link href="/forms/nda-forms" >New NDA Form</Link>

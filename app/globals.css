@@ -29,3 +29,8 @@ body {
 .preview-container * {
   all: unset; /* Reset all styles */
 }
+
+
+.jodit_sticky>.jodit-toolbar__box{
+  position: fixed !important;
+}
