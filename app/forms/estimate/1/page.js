@@ -1,21 +1,59 @@
 "use client";
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 // import axios from "axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 
 export default function Home() {
+  const editor = useRef(null);
+  const [Disclaimer, setDisclaimer] = useState("ASHA’s good faith estimate template is only a model. It does not dictate which services should or should not be listed on the estimate and does not imply medical necessity. Not all procedures, billing codes, or other pertinent information are included in the model. See ASHA's website for important information on this template.");
+  const [Welcome, setWelcome] = useState("Thank you for choosing UNL Barkley Speech-Language and Hearing Clinic for your speech-language pathology needs. As a self-pay patient, you are entitled to a good faith estimate which outlines the potential costs associated with your evaluation and treatment in our office.");
+  const [Financial, setFinancial] = useState("By signing this document, you acknowledge that you have received and understand your financial responsibilities to this practice if you choose to receive services.<br>If you would like to seek reimbursement from your health insurance, we can provide a superbill at the end of your visit(s). Please note that our rates may be different from your insurance reimbursement rate, and reimbursement rates could be lower. We recommend that you check with your insurance provider for rates and coverage of services.");
+  const [Provider, setProvider] = useState("This good faith estimate lists services that will be furnished at UNL Barkley Speech-Language and Hearing Clinic and applies to all providers in this practice, including the initiating provider: [Provider Name, Credentials, NPI, Tax ID].");
+  const [Primary , setPrimary ] = useState("<p><strong>Primary Diagnosis:</strong> ________________________</p><p><strong>ICD-10 Code:</strong> ________________________</p><p><strong>Secondary Diagnosis (if applicable):</strong> ________________________</p> <p><strong>ICD-10 Code:</strong> ________________________</p>");
+  
+
+
   const [formData, setFormData] = useState({
-    issuedDate: "2025-02-07",
-    DisclosingName: "John Deo",
-    DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
-    ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
-    DISCLOSINGDate: "2025-02-07",
-    RECEIVINGDate: "2025-02-07",
+    TemplateFor: "Pathology Services",
+    InformationHeading: "Patient Information",
+    Name: "John Deo",
+    Date: "2025-02-07",
+    Services: "Description of Services",
+    Signature:"Mark Rivero",
+    Dated:"2025-02-07"
+
   });
+
+
+  const config = {
+    buttons: ["bold", "italic", "underline", "ul", "ol", "fontsize"],
+    toolbarAdaptive: false, // Keeps the toolbar fixed
+    showXPathInStatusbar: false, 
+    // Hides unnecessary UI elements
+  };
+
+
+  
+  const [lineItems, setLineItems] = useState([{ code: "",description: "", cost :""  }]);
+  const handleAddRow = () => {
+    setLineItems([...lineItems, { code: "", description: "", cost :"" }]);
+  };
+  const handleRemoveRow = (index) => {
+    setLineItems(lineItems.filter((_, i) => i !== index));
+  };
+  const handleInputChange = (index, event) => {
+    const { name, value } = event.target;  // Extract name and value correctly
+    const updatedItems = [...lineItems];
+    updatedItems[index][name] = value;  
+    setLineItems(updatedItems);
+  };
+
+  
   const [pdfUrl, setPdfUrl] = useState("");
 
   const handleGeneratePDF = async (e) => {
@@ -80,21 +118,18 @@ export default function Home() {
     </style>
 </head>
 <body>
-    <h1>Estimate Template for Pathology Services</h1>
-    <p><strong>Disclaimer:</strong> ASHA’s good faith estimate template is only a model. It does not dictate which services should or should not be listed on the estimate and does not imply medical necessity. Not all procedures, billing codes, or other pertinent information are included in the model. See ASHA's website for important information on this template.</p>
+    <h1>Estimate For ${formData.TemplateFor}</h1>
+    <p><strong>Disclaimer:</strong> ${Disclaimer}</p>
     
     <h2>Welcome</h2>
-    <p>Thank you for choosing UNL Barkley Speech-Language and Hearing Clinic for your speech-language pathology needs. As a self-pay patient, you are entitled to a good faith estimate which outlines the potential costs associated with your evaluation and treatment in our office.</p>
+    <p>${Welcome}</p>
     
-    <h2>Patient Information</h2>
-    <p><strong>Patient:</strong> ________________________</p>
-    <p><strong>DOB:</strong> ________________________</p>
+    <h2>${formData.InformationHeading}</h2>
+    <p><strong>Name: </strong>${formData.Name}</p>
+    <p><strong>Date: </strong>${formData.Date}</p>
     
-    <h2>Description of Services</h2>
-    <p><strong>Primary Diagnosis:</strong> ________________________</p>
-    <p><strong>ICD-10 Code:</strong> ________________________</p>
-    <p><strong>Secondary Diagnosis (if applicable):</strong> ________________________</p>
-    <p><strong>ICD-10 Code:</strong> ________________________</p>
+    <h2>${formData.Services}</h2>
+    ${Primary}
     
     <h2>Expected Services</h2>
     <table>
@@ -103,25 +138,28 @@ export default function Home() {
             <th>Description</th>
             <th>Cost ($)</th>
         </tr>
-        <tr>
-            <td>92508</td>
-            <td>Speech and language treatment; group</td>
-            <td>$20.00</td>
-        </tr>
+      ${lineItems
+        .map(
+          (item) => `<tr>
+                <td style="height: 30px; padding: 8px;">${item.code}</td>
+                <td style="height: 30px; padding: 8px;">${item.description}</td>
+                <td style="height: 30px; padding: 8px;">${item.code}</td>
+            </tr>`
+        )
+        .join("")}
     </table>
     
-    <p>Based on your plan of care, you will need up to <strong>[# of visits]</strong> visits this semester. At $20.00 per visit, the estimated total costs are <strong>[# of visits multiplied by $ rate per visit]</strong>.</p>
+  
     
     <h2>Provider Information</h2>
-    <p>This good faith estimate lists services that will be furnished at UNL Barkley Speech-Language and Hearing Clinic and applies to all providers in this practice, including the initiating provider: <strong>[Provider Name, Credentials, NPI, Tax ID]</strong>.</p>
+    ${Provider}
     
     <h2>Financial Acknowledgment</h2>
-    <p>By signing this document, you acknowledge that you have received and understand your financial responsibilities to this practice if you choose to receive services.</p>
-    <p>If you would like to seek reimbursement from your health insurance, we can provide a superbill at the end of your visit(s). Please note that our rates may be different from your insurance reimbursement rate, and reimbursement rates could be lower. We recommend that you check with your insurance provider for rates and coverage of services.</p>
+   ${Financial}
     
     <div class="signature">
-        <p><strong>Patient Signature:</strong> ________________________</p>
-        <p><strong>Date:</strong> ________________________</p>
+        <p><strong>Signature:</strong> <u>${formData.Signature}</u></p>
+        <p><strong>Date:</strong> <u>${formData.Dated}</u></p>
     </div>
 </body>
 </html>
@@ -158,62 +196,149 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <input
-            type="date"
-            name="issuedDate"
-            value={formData.issuedDate}
-            onChange={handleChange}
-            placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
+          <label htmlFor="" className="-mb-4">Enter Template Name</label>
           <input
             type="text"
-            name="DisclosingName"
-            value={formData.DisclosingName}
+            name="TemplateFor"
+            value={formData.TemplateFor}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Name"
+            placeholder="Estimate Report For?"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclaimer Content</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={Disclaimer}
+            onBlur={(newContent) => setDisclaimer(newContent)}
+          />
+          <label htmlFor="" className="-mb-4">Enter Welcome Content</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={Welcome}
+            onBlur={(newContent) => setWelcome(newContent)}
+          />
+          <label htmlFor="" className="-mb-4">Heading</label>
           <input
             type="text"
-            name="DisclosingAddress"
-            value={formData.DisclosingAddress}
+            name="InformationHeading"
+            value={formData.InformationHeading}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Address"
+            placeholder="Enter Heading"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Your Full Name</label>
           <input
             type="text"
-            name="ReceivingName"
-            value={formData.ReceivingName}
+            name="Name"
+            value={formData.Name}
             onChange={handleChange}
-            placeholder="Enter Receiving Party's Name"
+            placeholder="Enter Full Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Date</label>
           <input
-            type="text" name="ReceivingAddress"
-
-            value={formData.ReceivingAddress}
+            type="Date"
+            name="Date"
+            value={formData.Date}
             onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
+            placeholder="Select Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Heading</label>
           <input
-            type="date" name="DISCLOSINGDate"
-
-            value={formData.DISCLOSINGDate}
+            type="Text"
+            name="Services"
+            value={formData.Services}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party Date"
+            placeholder="Heading"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <input
-            type="date" name="RECEIVINGDate"
-            value={formData.RECEIVINGDate}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <label htmlFor="" className="-mb-4">List Of Service Given</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={Primary}
+            onBlur={(newContent) => setPrimary(newContent)}
+          />
+           <label htmlFor="" className="-mb-4">Estimation Table</label>
+          {lineItems.map((item, index) => (
+            <div key={index} className="flex-col flex gap-2 mb-2 gap-x-2">
+              <input
+                type="text"
+                name="code"
+                value={item.code}
+                onChange={(e) => handleInputChange(index, e)}
+                placeholder="Enter Code"
+                className="py-2 px-4 border rounded"
+              />
+              <input
+                type="text"
+                name="description"
+                value={item.description}
+                onChange={(e) => handleInputChange(index, e)}
+                placeholder="Enter Description"
+                className="py-2 px-4 border rounded"
+              />
+              <input
+                type="text"
+                name="cost"
+                value={item.cost}
+                onChange={(e) => handleInputChange(index, e)}
+                placeholder="Enter Cost"
+                className="py-2 px-4 border rounded"
+              />
+              {lineItems.length > 1 && (
+                <button
+                  onClick={() => handleRemoveRow(index)}
+                  className="py-2 px-4 bg-red-500 text-white rounded"
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          ))}
+          <button
+            onClick={handleAddRow}
+            className="py-2 px-4 bg-green-500 text-white rounded mt-2"
+          >
+            Add Row
+          </button>
+          <label htmlFor="" className="-mb-4">Set Provider Information</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={Provider}
+            onBlur={(newContent) => setProvider(newContent)}
+          />
+          <label htmlFor="" className="-mb-4">Financial Content Can Edit Here</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={Financial}
+            onBlur={(newContent) => setFinancial(newContent)}
           />
          
+         <label htmlFor="" className="-mb-4">Signature</label>
+          <input
+            type="Text"
+            name="Signature"
+            value={formData.Signature}
+            onChange={handleChange}
+            placeholder="Signature"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Date</label>
+          <input
+            type="Text"
+            name="Dated"
+            value={formData.Dated}
+            onChange={handleChange}
+            placeholder="Date"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
