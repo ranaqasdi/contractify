@@ -141,9 +141,9 @@ export default function Home() {
       ${lineItems
         .map(
           (item) => `<tr>
-                <td style="height: 30px; padding: 8px;">${item.code}</td>
-                <td style="height: 30px; padding: 8px;">${item.description}</td>
-                <td style="height: 30px; padding: 8px;">${item.code}</td>
+                <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.code}</td>
+                <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.description}</td>
+                <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.code}</td>
             </tr>`
         )
         .join("")}

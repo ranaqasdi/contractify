@@ -9,24 +9,23 @@ import { useEffect, useRef } from "react";
 export default function Home() {
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
-    invoiceId: "TP_210",
-    clientName: "David Mark",
-    clientEmail: "client@example.com",
-    clientcompanyName: "Templik",
-    clientcompanyAddress: "86 Route 59, Airmont, New York",
+    Id: "TP_210",
     yourName: "John Deo",
     yourEmail: "john@deo.com",
-    companyName: "The Studios",
-    companyAddress: "846 Route 539, Airmont, New York",
+    Department: "Sales",
+    EmployeeID: "45678",
+    startTime: "025-02-07",
+    endTime: "25-02-07",
     Subtotal: "",
     TaxAmount: "",
-    Tax: "10",
+    Tax: "5",
     TotalAmount: "",
+    ManagerName: "Mark Deo"
   });
 
-  const [lineItems, setLineItems] = useState([{ Description: "", Total: "", Quantity: "", UnitPrice: "" }]);
+  const [lineItems, setLineItems] = useState([{ Description: "", Total: "", Category: "", Date: "" }]);
   const handleAddRow = () => {
-    setLineItems([...lineItems, { Description: "", Total: "", Quantity: "", UnitPrice: "" }]);
+    setLineItems([...lineItems, { Description: "", Total: "", Category: "", Date: "" }]);
   };
   const handleRemoveRow = (index) => {
     setLineItems(lineItems.filter((_, i) => i !== index));
@@ -36,20 +35,13 @@ export default function Home() {
     const updatedItems = [...lineItems];
     updatedItems[index][name] = value;
 
-    // Calculate the total for the row
-    if (name === "Quantity" || name === "UnitPrice") {
-      const quantity = parseFloat(updatedItems[index].Quantity) || 0;
-      const unitPrice = parseFloat(updatedItems[index].UnitPrice) || 0;
-      updatedItems[index].Total = (quantity * unitPrice).toFixed(2);
-    }
-
     setLineItems(updatedItems);
   };
 
   const [pdfUrl, setPdfUrl] = useState("");
   useEffect(() => {
     const subtotal = lineItems.reduce(
-      (sum, item) => sum + (parseFloat(item.Quantity) * parseFloat(item.UnitPrice) || 0),
+      (sum, item) => sum + (parseFloat(item.Total)),
       0
     );
     const taxAmount = (subtotal * (parseFloat(formData.Tax) / 100)) || 0;
@@ -98,15 +90,15 @@ export default function Home() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice</title>
+    <title>Expense Report</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #fff;
-            padding: 60px;
+            padding: 40px;
         }
-        .invoice-container {
-           
+        .report-container {
+          
         }
         h1, h2, h3 {
             color: #333;
@@ -118,28 +110,24 @@ export default function Home() {
         .header h1 {
             color: #0073e6;
         }
-        .invoice-details {
-            display: flex;
-            justify-content: space-between;
-            margin: 50px 0;
+        .details {
+           margin-bottom:30px
+            
         }
-        .invoice-details div {
-            width: 48%;
-        }
-        .invoice-details p {
+        .details p {
             margin: 5px 0;
         }
-        .invoice-table {
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        .invoice-table th, .invoice-table td {
+        th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
         }
-        .invoice-table th {
+        th {
             background: #0073e6;
             color: white;
         }
@@ -161,45 +149,37 @@ export default function Home() {
     </style>
 </head>
 <body>
-    <div class="invoice-container">
+    <div class="report-container">
         <div class="header">
-            <h1>Invoice</h1>
-            <p>Invoice #: ${formData.invoiceId} | Date: ${formData.issuedDate}</p>
+            <h1>Expense Report</h1>
+            <p>Report ID: ${formData.Id} | Date: ${formData.issuedDate}</p>
         </div>
 
-        <div class="invoice-details">
-            <div>
-                <h3>Bill To:</h3>
-                <p><strong>${formData.clientName}</strong></p>
-                <p>Company Name: ${formData.clientcompanyName}</p>
-                <p>Address: ${formData.clientcompanyAddress}</p>
-                <p>Email:  ${formData.clientEmail}</p>
-            </div>
-            <div>
-                <h3>From:</h3>
-                <p><strong>${formData.yourName}</strong></p>
-                <p>Company Name: ${formData.companyName}</p>
-                <p>Address: ${formData.companyAddress}</p>
-                <p>Email: ${formData.yourEmail}</p>
-            </div>
+        <div class="details">
+            <h3>Employee Details</h3>
+            <p><strong>Name:</strong> ${formData.yourName}</p>
+            <p><strong>Department:</strong> ${formData.Department}</p>
+            <p><strong>Employee ID:</strong> ${formData.Department}</p>
+            <p><strong>Reporting Period:</strong> ${formData.startTime} - ${formData.endTime}</p>
         </div>
 
-        <table class="invoice-table">
+        <h3>Expense Breakdown</h3>
+        <table>
             <thead>
                 <tr>
-                    <th>Items</th>
-                    <th>Quantity</th>
-                    <th>Unit Price</th>
-                    <th>Total</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Amount</th>
                 </tr>
             </thead>
             <tbody>
-            ${lineItems
+                ${lineItems
         .map(
           (item) => `<tr>
+                      <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.Date}</td>
+                      <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.Category}</td>
                       <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.Description}</td>
-                      <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.Quantity}</td>
-                      <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.UnitPrice}</td>
                       <td style="height: 30px; padding: 8px; width: 200px; word-wrap: break-word; word-break: break-word; overflow: hidden;">${item.Total}</td>
                   </tr>`
         )
@@ -208,27 +188,27 @@ export default function Home() {
         </table>
 
         <div class="total-section">
-            <p><strong>Subtotal:</strong> ${formData.Subtotal}</p>
-            <p><strong>Tax (10%):</strong>${formData.TaxAmount}</p>
-            <h2>Total: $${formData.TotalAmount}</h2>
+            <p><strong>Subtotal:</strong> $${formData.Subtotal}</p>
+            <p><strong>Tax (5%):</strong> $${formData.TaxAmount}</p>
+            <h2>Total Reimbursement: $${formData.TotalAmount}</h2>
         </div>
 
-        <h3 style="margin-top:100px">Payment Terms:</h3>
-        <p>Payment is due within 14 days of receipt. Late payments may incur a 5% penalty.</p>
+        <h3>Approval</h3>
+        <p>Manager’s approval is required before processing the reimbursement.</p>
         
         <div class="signature">
             <div>
-                Authorized Signature<br>
+                Employee Signature<br>
                 ${formData.yourName}
             </div>
             <div>
-                Client Signature<br>
-                ${formData.clientName}
+                Manager Signature<br>
+                ${formData.ManagerName}
             </div>
         </div>
 
         <div class="footer">
-            <p>Thank you for your business!</p>
+            <p>Thank you! Please submit the report with necessary receipts.</p>
         </div>
     </div>
 </body>
@@ -266,12 +246,12 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Invoice ID</label>
+          <label htmlFor="" className="-mb-4">Enter ID</label>
 
           <input
             type="text"
-            name="invoiceId"
-            value={formData.invoiceId}
+            name="Id"
+            value={formData.Id}
             onChange={handleChange}
             placeholder="Enter Invoice Id"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
@@ -286,104 +266,68 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Name</label>
+          <label htmlFor="" className="-mb-4">Enter Your Name</label>
           <input
             type="text"
-            name="clientName"
-            value={formData.clientName}
+            name="yourName"
+            value={formData.yourName}
             onChange={handleChange}
             placeholder="Enter Client Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Company Name</label>
+          <label htmlFor="" className="-mb-4">Enter Department Name</label>
           <input
             type="text"
-            name="clientcompanyName"
-            value={formData.clientcompanyName}
+            name="Department"
+            value={formData.Department}
             onChange={handleChange}
-            placeholder="Enter Client Company Name"
+            placeholder="Enter Department Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Company Address</label>
+          <label htmlFor="" className="-mb-4">Enter Start Time</label>
           <input
-            type="text"
-            name="clientcompanyAddress"
-            value={formData.clientcompanyAddress}
-            onChange={handleChange}
-            placeholder="Enter Client Company Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <label htmlFor="" className="-mb-4">Enter Client Email Address</label>
-          <input
-            type="email" name="clientEmail"
+            type="date" name="startTime"
 
-            value={formData.clientEmail}
+            value={formData.startTime}
             onChange={handleChange}
-            placeholder="Enter Client Email Address"
+            placeholder="Enter Start Time"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Name</label>
+          <label htmlFor="" className="-mb-4">Enter End Time</label>
           <input
-            type="email" name="yourName"
+            type="date" name="endTime"
 
-            value={formData.yourName}
+            value={formData.endTime}
             onChange={handleChange}
-            placeholder="Enter Your Name"
+            placeholder="Enter End Time"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Company Name</label>
-          <input
-            type="email" name="companyName"
-
-            value={formData.companyName}
-            onChange={handleChange}
-            placeholder="Enter Your Company Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <label htmlFor="" className="-mb-4">Enter Your Company Address</label>
-          <input
-            type="text" name="companyAddress"
-
-            value={formData.companyAddress}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <label htmlFor="" className="-mb-4">Enter Your Email Address</label>
-          <input
-            type="email" name="yourEmail"
-
-            value={formData.yourEmail}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <label htmlFor="" className="-mb-4">Enter Items, Price Per Unit and Quantity</label>
+          <label htmlFor="" className="-mb-4">Enter Date, Category and Description</label>
 
           {lineItems.map((item, index) => (
             <div key={index} className="flex justify-between gap-2 mb-2">
+              <input
+                type="date"
+                name="Date"
+                value={item.Date}
+                onChange={(e) => handleInputChange(index, e)}
+                placeholder="Enter Date"
+                className="py-2 px-2 border rounded w-60"
+              />
+              <input
+                type="text"
+                name="Category"
+                value={item.Category}
+                onChange={(e) => handleInputChange(index, e)}
+                placeholder="Enter Category"
+                className="py-2 px-2 border rounded w-36"
+              />
               <input
                 type="text"
                 name="Description"
                 value={item.Description}
                 onChange={(e) => handleInputChange(index, e)}
-                placeholder="Enter Items"
-                className="py-2 px-2 border rounded w-60"
-              />
-                <input
-                  type="text"
-                  name="Quantity"
-                  value={item.Quantity}
-                  onChange={(e) => handleInputChange(index, e)}
-                  placeholder="Enter Quantity"
-                  className="py-2 px-2 border rounded w-36"
-                />
-              <input
-                type="text"
-                name="UnitPrice"
-                value={item.UnitPrice}
-                onChange={(e) => handleInputChange(index, e)}
-                placeholder="Enter Unit Price"
+                placeholder="Enter Description"
                 className="py-2 px-2 border rounded w-36"
               />
               <input
@@ -412,7 +356,15 @@ export default function Home() {
             Add Row
           </button>
 
+          <label htmlFor="" className="-mb-4">Enter Manager Name</label>
+          <input
+            type="text" name="ManagerName"
 
+            value={formData.ManagerName}
+            onChange={handleChange}
+            placeholder="Enter  Manager Name"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
