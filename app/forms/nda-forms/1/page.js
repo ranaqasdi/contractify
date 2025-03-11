@@ -12,7 +12,7 @@ export default function Home() {
     DisclosingName: "John Deo",
     DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
     ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
+    ReceivingAddress: "86 Route 59, Airmont, New York",
     DISCLOSINGDate: "2025-02-07",
     RECEIVINGDate: "2025-02-07",
   });
@@ -77,7 +77,7 @@ export default function Home() {
 
 <body >
     <h1 style="text-align:center">NON-DISCLOSURE AGREEMENT (NDA)</h1>
-    <p>This Nondisclosure Agreement or ("Agreement") has been entered into on the date of
+    <p>This Non Disclosure Agreement or ("Agreement") has been entered into on the date of
         <u><b>${formData.issuedDate}</b></u>  and is by and between:</p>
 
     <div class="section">
@@ -228,6 +228,7 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
           <input
             type="date"
             name="issuedDate"
@@ -236,6 +237,7 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Name</label>
           <input
             type="text"
             name="DisclosingName"
@@ -244,6 +246,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Address</label>
           <input
             type="text"
             name="DisclosingAddress"
@@ -252,6 +255,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Name</label>
           <input
             type="text"
             name="ReceivingName"
@@ -260,6 +264,7 @@ export default function Home() {
             placeholder="Enter Receiving Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Address</label>
           <input
             type="text" name="ReceivingAddress"
 
@@ -268,6 +273,7 @@ export default function Home() {
             placeholder="Enter Receiving Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party Date</label>
           <input
             type="date" name="DISCLOSINGDate"
 
@@ -276,6 +282,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party Date</label>
           <input
             type="date" name="RECEIVINGDate"
             value={formData.RECEIVINGDate}
@@ -283,6 +290,7 @@ export default function Home() {
             placeholder="Enter Receiving Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          
          
           <button
             onClick={handleGeneratePDF}

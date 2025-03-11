@@ -1,23 +1,38 @@
 "use client";
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 // import axios from "axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
 
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 export default function Home() {
+  const editor = useRef(null);
+  const [ScopeOFWork, setScopeOFWork] = useState("<ul><li>Facebook</li><li>Instagram</li><li>Youtube</li><li>Pintrest</li></ul>");
+
+
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
-    DisclosingName: "John Deo",
-    DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
-    ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
-    DISCLOSINGDate: "2025-02-07",
-    RECEIVINGDate: "2025-02-07",
+    BrandName: "Brand Name",
+    Influencer: "John Deo",
+
+    Payment: "$3000",
+    Compensation: "Yes / No",
+    Exclusivity: "Yes / No",
+    Termination: "3",
+    BRDate: "2025-02-07",
+    BRName: "Robin H.",
+    IDate: "2025-02-07",
   });
   const [pdfUrl, setPdfUrl] = useState("");
-
+  const config = {
+    buttons: ["bold", "italic", "underline", "ul", "ol", "fontsize"],
+    toolbarAdaptive: false, // Keeps the toolbar fixed
+    showXPathInStatusbar: false,
+    // Hides unnecessary UI elements
+  };
   const handleGeneratePDF = async (e) => {
     e.preventDefault();  // Prevents default form behavior
     try {
@@ -85,24 +100,19 @@ export default function Home() {
 <body>
     <div class="container">
         <h2>Influencer Collaboration Agreement</h2>
-        <p><strong>Date:</strong> <span id="date">__________</span></p>
+        <p><strong>Date:</strong> <span id="date"><strong>${formData.issuedDate}</strong></span></p>
         <p><strong>Parties:</strong></p>
-        <p><strong>Brand:</strong> __________________________</p>
-        <p><strong>Influencer:</strong> __________________________</p>
+        <p>Brand:<strong>${formData.BrandName}</strong></p>
+        <p>Influencer:<strong> ${formData.Influencer}</strong></p>
         
         <h3>1. Scope of Work</h3>
         <p>The Influencer agrees to create and share content promoting the Brand’s products/services on the following platforms:</p>
-        <ul>
-            <li>Instagram</li>
-            <li>YouTube</li>
-            <li>TikTok</li>
-            <li>Other: ______________________</li>
-        </ul>
+       <p>${ScopeOFWork}</p>
         
         <h3>2. Compensation</h3>
         <p>The Brand agrees to compensate the Influencer as follows:</p>
-        <p><strong>Monetary Payment:</strong> $__________</p>
-        <p><strong>Product/Service Compensation:</strong> Yes / No</p>
+        <p>Monetary Payment:<strong>${formData.Payment}</strong></p>
+        <p>Product/Service Compensation:<strong> ${formData.Compensation}</strong></p>
         
         <h3>3. Content Guidelines</h3>
         <p>The Influencer agrees to:</p>
@@ -113,10 +123,10 @@ export default function Home() {
         </ul>
         
         <h3>4. Exclusivity</h3>
-        <p>The Influencer agrees <strong>(Yes / No)</strong> to exclusivity during the campaign period.</p>
+        <p>The Influencer agrees <strong> ${formData.Exclusivity}</strong> to exclusivity during the campaign period.</p>
         
         <h3>5. Termination</h3>
-        <p>Either party may terminate the agreement with <strong>___ days</strong> written notice.</p>
+        <p>Either party may terminate the agreement with <strong>${formData.Termination} days</strong> written notice.</p>
         
         <h3>6. Confidentiality</h3>
         <p>Both parties agree to keep confidential information private and not disclose it without consent.</p>
@@ -125,13 +135,13 @@ export default function Home() {
         <div class="signature">
             <div>
                 <p>Brand Representative</p>
-                <p>________________________</p>
-                <p>Date: __________</p>
+                <p><strong>${formData.BRName}</strong></p>
+                <p>Date: <strong>${formData.BRDate}</strong></p>
             </div>
             <div>
                 <p>Influencer</p>
-                <p>________________________</p>
-                <p>Date: __________</p>
+                <p><strong>${formData.Influencer}</strong></p>
+                <p>Date: <strong>${formData.IDate}</strong></p>
             </div>
         </div>
         
@@ -171,6 +181,7 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
           <input
             type="date"
             name="issuedDate"
@@ -179,54 +190,94 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Brand Name</label>
           <input
             type="text"
-            name="DisclosingName"
-            value={formData.DisclosingName}
+            name="BrandName"
+            value={formData.BrandName}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Name"
+            placeholder="Enter Brand Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Influencer Name</label>
           <input
             type="text"
-            name="DisclosingAddress"
-            value={formData.DisclosingAddress}
+            name="Influencer"
+            value={formData.Influencer}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party's Address"
+            placeholder="Enter Influencer Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <input
-            type="text"
-            name="ReceivingName"
-            value={formData.ReceivingName}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="text" name="ReceivingAddress"
+          <label htmlFor="" className="-mb-4">Enter Scope Of Work</label>
 
-            value={formData.ReceivingAddress}
+          <JoditEditor
+            key={ScopeOFWork} // This forces the editor to re-initialize when content changes
+            ref={editor}
+            value={ScopeOFWork}
+            config={config}
+            onBlur={(newContent) => setScopeOFWork(newContent)}
+          />
+          <label htmlFor="" className="-mb-4">Enter Total Payment</label>
+          <input
+            type="text"
+            name="Payment"
+            value={formData.Payment}
             onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
+            placeholder="Enter Payment"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Compensation</label>
           <input
-            type="date" name="DISCLOSINGDate"
+            type="text" name="Compensation"
 
-            value={formData.DISCLOSINGDate}
+            value={formData.Compensation}
             onChange={handleChange}
-            placeholder="Enter Disclosing Party Date"
+            placeholder="Enter Compensation"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Exclusivity</label>
           <input
-            type="date" name="RECEIVINGDate"
-            value={formData.RECEIVINGDate}
+            type="text" name="Exclusivity"
+
+            value={formData.Exclusivity}
             onChange={handleChange}
-            placeholder="Enter Receiving Party Date"
+            placeholder="Enter Exclusivity"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-         
+          <label htmlFor="" className="-mb-4">Enter Termination Notice Period (in days)</label>
+          <input
+            type="text" name="Termination"
+
+            value={formData.Termination}
+            onChange={handleChange}
+            placeholder="3"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Brand Representative's Name</label>
+          <input
+            type="text" name="BRName"
+            value={formData.BRName}
+            onChange={handleChange}
+            placeholder="Enter Brand Representative"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Brand Signature Date</label>
+          <input
+            type="date" name="BRDate"
+            value={formData.BRDate}
+            onChange={handleChange}
+            placeholder="Enter Brand Date"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Influencer Signature Date</label>
+          <input
+            type="date" name="IDate"
+            value={formData.IDate}
+            onChange={handleChange}
+            placeholder="Enter Influencer Date"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"

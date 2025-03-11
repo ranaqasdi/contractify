@@ -4,17 +4,23 @@ import axios from "axios";
 // import axios from "axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 export default function Home() {
+  const editor = useRef(null);
+  const [content1, setContent1] = useState("How wages are paid");
+  const [content2, setContent2] = useState("Enter Detailed Description of duties");
+
+
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
-    DisclosingName: "John Deo",
-    DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
-    ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
-    DISCLOSINGDate: "2025-02-07",
-    RECEIVINGDate: "2025-02-07",
+    employerName: "John Deo",
+    employeeName: "David Mark",
+    JOBTITLE: "Web Developer",
+    workingHours: "25",
+    salary: "$95 per hour"
   });
   const [pdfUrl, setPdfUrl] = useState("");
 
@@ -81,23 +87,25 @@ export default function Home() {
     <p class="note">IMPORTANT NOTE TO EMPLOYERS: Please do not just paste any of these clauses into your employees' work contracts without carefully reviewing them to ensure they meet your needs.</p>
     
     <div class="contract">
-        <p>Between _______________________ (the employer) and _______________________ (the employee).</p>
+        <p>Between <strong> ${formData.employerName} </strong>(the employer) and <strong>${formData.employeeName}</strong> (the employee).</p>
         
-        <p>1. _______________________ is employed as <strong>____ (JOB TITLE) ____</strong>.</p>
+        <p>1. <strong>${formData.employeeName} </strong>is employed as <strong> ${formData.JOBTITLE}</strong>.</p>
         
-        <p>2. Description of duties: (You may want to include a short description of duties. This is not strictly necessary.)</p>
+        <p>2. Description of duties: </p>
+        <p>${content2}</p>
         
         <p>3. The employee is employed on a part-time basis.</p>
         
-        <p>4. The employee's regular hours of work shall be ____________ (if the employee has a break in the middle of the day you can list the hours in 2 separate lots, for instance: 7:30 - 11:30 and 1:30 - 4:30. This clarifies that the break is not paid work.)</p>
+        <p>4. The employee's regular hours of work shall be <strong>${formData.workingHours}</strong> (if the employee has a break in the middle of the day you can list the hours in 2 separate lots, for instance: 7:30 - 11:30 and 1:30 - 4:30. This clarifies that the break is not paid work.)</p>
         
         <p>5. With agreement of both the employer and the employee, additional hours may be worked in excess of these hours and on other days of the week.</p>
         
-        <p>6. The employee shall be paid ____________ per hour of work. Lunch breaks shall be unpaid.</p>
+        <p>6. The employee shall be paid<strong> ${formData.salary}</strong> of work. Lunch breaks shall be unpaid.</p>
         
         <p>7. Additional hours shall be paid at the regular rate of pay unless the employee works for more than 8 hours per day, more than 6 days per week, or more than 44 hours per week. If the employee's working hours exceed any of these limits, then overtime shall be paid in accordance with the rates set in the Employment Act.</p>
         
-        <p>8. Wages shall be paid ____________ (detail on how wages are paid).</p>
+        <p>8. Wages shall be paid (detail on how wages are paid):</p>
+        <p>${content1}</p>
         
         <p>9. VNPF will be paid in accordance with the requirements of the VNPF Act.</p>
         
@@ -112,7 +120,7 @@ export default function Home() {
         <p>14. The contract can be terminated by the employer immediately in the event of serious misconduct by the employee. Before any such termination, the employer will give the employee an adequate opportunity to answer any charges.</p>
         
         <div class="signature">
-            <p>Signed (Employer, Employee) Date ____________</p>
+            <p>Signed (Employer, Employee) Date <strong>${formData.issuedDate}</strong></p>
         </div>
     </div>
 </body>
@@ -143,12 +151,51 @@ export default function Home() {
     return <iframe ref={iframeRef} title="HTML Preview" className="h-full" />;
   };
 
+  const config = {
+    buttons: ["bold", "italic", "underline", "ul", "ol", "fontsize"],
+    toolbarAdaptive: false, // Keeps the toolbar fixed
+    showXPathInStatusbar: false, 
+    // Hides unnecessary UI elements
+  };
+
   return (
     <>
       <div className="flex m-10 rounded-xl overflow-hidden shadow-md">
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Employer's Name</label>
+
+          <input
+            type="text"
+            name="employerName"
+            value={formData.employerName}
+            onChange={handleChange}
+            placeholder="Enter Employer's Name"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Employee's Name</label>
+
+          <input
+            type="text"
+            name="employeeName"
+            value={formData.employeeName}
+            onChange={handleChange}
+            placeholder="Enter Employee's Name"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Job Title</label>
+
+          <input
+            type="text"
+            name="JOBTITLE"
+            value={formData.JOBTITLE}
+            onChange={handleChange}
+            placeholder="Job Title"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+
           <input
             type="date"
             name="issuedDate"
@@ -157,54 +204,46 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-          <input
-            type="text"
-            name="DisclosingName"
-            value={formData.DisclosingName}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="text"
-            name="DisclosingAddress"
-            value={formData.DisclosingAddress}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="text"
-            name="ReceivingName"
-            value={formData.ReceivingName}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="text" name="ReceivingAddress"
+          <label htmlFor="" className="-mb-4">Enter Detailed Description of duties</label>
 
-            value={formData.ReceivingAddress}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <JoditEditor
+            key={content2} // This forces the editor to re-initialize when content changes
+            ref={editor}
+            value={content2}
+            config={config}
+            onBlur={(newContent) => setContent2(newContent)}
           />
-          <input
-            type="date" name="DISCLOSINGDate"
+          <label htmlFor="" className="-mb-4">Enter working hours</label>
 
-            value={formData.DISCLOSINGDate}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
           <input
-            type="date" name="RECEIVINGDate"
-            value={formData.RECEIVINGDate}
+            type="text" name="workingHours"
+
+            value={formData.workingHours}
             onChange={handleChange}
-            placeholder="Enter Receiving Party Date"
+            placeholder="Enter working hours"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-         
+          <label htmlFor="" className="-mb-4">Enter Per Hour Wage</label>
+
+          <input
+            type="text" name="salary"
+
+            value={formData.salary}
+            onChange={handleChange}
+            placeholder="Enter Per Hour Wage"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">How wages are paid?</label>
+
+          <JoditEditor
+            ref={editor}
+            value={content1}
+            config={config}
+            onBlur={(newContent) => setContent1(newContent)}
+          />
+
+
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"

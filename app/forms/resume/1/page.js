@@ -11,15 +11,16 @@ const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 export default function Home() {
   const editor = useRef(null);
   const [content, setContent] = useState("");
+  const [OBJECTIVE, setOBJECTIVE] = useState("<p>To obtain a part-time position in the field of food and beverage management at a large upscale resort in the Orlando area.</p>");
+  const [EDUCATION, setEDUCATION] = useState("<p><strong>University of Central Florida – Rosen College of Hospitality Management, Orlando, FL</strong><br> Bachelor of Science in Hospitality Management<br> Specialization in Restaurant Management<br> GPA 3.9, May 2007</p>");
+  const [EXPERIENCE, setEXPERIENCE] = useState(" <p><strong>Guest Relations Coordinator, Buca di Beppo, Orlando, FL</strong> (August 2005-Present)</p><p><strong>Restaurant Supervisor, Orlando Airport Marriott, Orlando, FL</strong> (August 2004-August 2005)</p><ul><li>Increased guest satisfaction scores from 60% to 100% on guest satisfaction surveys.</li><li>Forecasted weekly food and beverage outlets among two restaurants, lounge bar, sports bar, and room service.</li><li>Tracked employee productivity and gained knowledge of basic payroll functions.</li><li>Set standard training procedures for food and beverage outlets and updated weekly inventory reports.</li></ul><p><strong>Sales and Catering Assistant, Gaylord Palms, Kissimmee, FL</strong> (January 2004-August 2004)</p><ul><li>Prepared Banquet Event Order forms for social events and meetings.</li><li>Supported servers and bartenders during periods of heavy guest traffic.</li><li>Oversaw all wait services for the boutique hotel, catering department, and restaurants.</li><li>Assisted with evaluation of monthly estimated budgets ranging from $5,000-$20,000.</li><li>Booked and serviced small meetings and social events alongside the Catering Manager.</li></ul><p><strong>Assistant Chef, Kai Sou Fusion, Winter Springs, FL</strong> (August 2003-December 2003)</p><ul><li>Helped management with menu planning and development.</li>li>Worked to maintain proper levels of ordering and inventory.</li><li>Implemented new techniques in serving and food preparation.</li></ul>");
+  const [SKILLS, setSKILLS] = useState(" <ul><li>Proficient with MS Word, Excel, PowerPoint, Access, and Outlook.</li><li>Worked with MICROS Point of Sale System and Navitech Delphi System.</li><li>Certified in ServSafe.</li><li>Fluent in Spanish.</li></ul>");
 
   const [formData, setFormData] = useState({
-    issuedDate: "2025-02-07",
-    DisclosingName: "John Deo",
-    DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
-    ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
-    DISCLOSINGDate: "2025-02-07",
-    RECEIVINGDate: "2025-02-07",
+    Name: "Charles D. Cook",
+    Address: "4000 Central Florida Boulevard Orlando, FL 32816",
+    PhoneNo: "407.823.2000",
+    EmailAddress: "CharlesD@gmail.ucf.edu"
   });
   const [pdfUrl, setPdfUrl] = useState("");
 
@@ -73,74 +74,30 @@ export default function Home() {
     </style>
 </head>
 <body>
-    <h1>Charles D. Cook</h1>
-    <p style="text-align: center;">4000 Central Florida Boulevard<br>
-    Orlando, FL 32816<br>
-    407.823.2000<br>
-    CharlesD@gmail.ucf.edu</p>
+    <h1>${formData.Name}</h1>
+    <p style="text-align: center;">${formData.Address}<br>
+    ${formData.PhoneNo}<br>
+    ${formData.EmailAddress}</p>
     
     <div class="section">
         <h2>OBJECTIVE</h2>
-        <p>To obtain a part-time position in the field of food and beverage management at a large upscale resort in the Orlando area.</p>
+        ${OBJECTIVE}
     </div>
     
     <div class="section">
         <h2>EDUCATION</h2>
-        <p><strong>University of Central Florida – Rosen College of Hospitality Management, Orlando, FL</strong><br>
-        Bachelor of Science in Hospitality Management<br>
-        Specialization in Restaurant Management<br>
-        GPA 3.9, May 2007</p>
+        ${EDUCATION}
     </div>
     
     <div class="section">
         <h2>WORK EXPERIENCE</h2>
-        <p><strong>Guest Relations Coordinator, Buca di Beppo, Orlando, FL</strong> (August 2005-Present)</p>
-        ${content}
-        
-        <p><strong>Restaurant Supervisor, Orlando Airport Marriott, Orlando, FL</strong> (August 2004-August 2005)</p>
-        <ul>
-            <li>Increased guest satisfaction scores from 60% to 100% on guest satisfaction surveys.</li>
-            <li>Forecasted weekly food and beverage outlets among two restaurants, lounge bar, sports bar, and room service.</li>
-            <li>Tracked employee productivity and gained knowledge of basic payroll functions.</li>
-            <li>Set standard training procedures for food and beverage outlets and updated weekly inventory reports.</li>
-        </ul>
-        
-        <p><strong>Sales and Catering Assistant, Gaylord Palms, Kissimmee, FL</strong> (January 2004-August 2004)</p>
-        <ul>
-            <li>Prepared Banquet Event Order forms for social events and meetings.</li>
-            <li>Supported servers and bartenders during periods of heavy guest traffic.</li>
-            <li>Oversaw all wait services for the boutique hotel, catering department, and restaurants.</li>
-            <li>Assisted with evaluation of monthly estimated budgets ranging from $5,000-$20,000.</li>
-            <li>Booked and serviced small meetings and social events alongside the Catering Manager.</li>
-        </ul>
-        
-        <p><strong>Assistant Chef, Kai Sou Fusion, Winter Springs, FL</strong> (August 2003-December 2003)</p>
-        <ul>
-            <li>Helped management with menu planning and development.</li>
-            <li>Worked to maintain proper levels of ordering and inventory.</li>
-            <li>Implemented new techniques in serving and food preparation.</li>
-        </ul>
+        ${EXPERIENCE}
     </div>
     
-    <div class="section">
-        <h2>LEADERSHIP EXPERIENCE</h2>
-        <p><strong>Vice President of Finance, Sigma Phi Epsilon Fraternity, University of Central Florida</strong> (May 2005-May 2006)</p>
-        <ul>
-            <li>Completed analysis of all financial records for fraternal activities.</li>
-            <li>Set up budgets for departments and delegated responsibilities.</li>
-            <li>Created a sound budget with a savings goal of at least 5% for long-term needs.</li>
-            <li>Recruited and trained a successor to ensure proper handling of finances.</li>
-        </ul>
-    </div>
     
     <div class="section">
         <h2>SKILLS/CERTIFICATIONS</h2>
-        <ul>
-            <li>Proficient with MS Word, Excel, PowerPoint, Access, and Outlook.</li>
-            <li>Worked with MICROS Point of Sale System and Navitech Delphi System.</li>
-            <li>Certified in ServSafe.</li>
-            <li>Fluent in Spanish.</li>
-        </ul>
+        ${SKILLS}
     </div>
 </body>
 </html>
@@ -170,73 +127,83 @@ export default function Home() {
 
     return <iframe ref={iframeRef} title="HTML Preview" className="h-full" />;
   };
-
+  const config = {
+    buttons: ["bold", "italic", "underline", "ul", "ol", "fontsize"],
+    toolbarAdaptive: false, // Keeps the toolbar fixed
+    showXPathInStatusbar: false, 
+    // Hides unnecessary UI elements
+  };
   return (
     <>
       <div className="flex m-10 rounded-xl overflow-hidden shadow-md">
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Your Full Name</label>
+          <input
+            type="text"
+            name="Name"
+            value={formData.Name}
+            onChange={handleChange}
+            placeholder="Enter Name"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Your Address</label>
+          <input
+            type="text"
+            name="Address"
+            value={formData.Address}
+            onChange={handleChange}
+            placeholder="Enter Address"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Phone Number</label>
+          <input
+            type="tel"
+            name="PhoneNo"
+            value={formData.PhoneNo}
+            onChange={handleChange}
+            placeholder="Enter Phone Number"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Email Address</label>
+          <input
+            type="email"
+            name="EmailAddress"
+            value={formData.EmailAddress}
+            onChange={handleChange}
+            placeholder="Enter Email Address"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Explain Objective of this resume</label>
           <JoditEditor
+            config={config}
             ref={editor}
-            value={content}
-            onChange={(newContent) => setContent(newContent)}
+            value={OBJECTIVE}
+            onBlur={(newContent) => setOBJECTIVE(newContent)}
           />
-          <input
-            type="date"
-            name="issuedDate"
-            value={formData.issuedDate}
-            onChange={handleChange}
-            placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <label htmlFor="" className="-mb-4">Details About Your Education</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={EDUCATION}
+            onBlur={(newContent) => setEDUCATION(newContent)}
           />
-          <input
-            type="text"
-            name="DisclosingName"
-            value={formData.DisclosingName}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <label htmlFor="" className="-mb-4">Work Experience Goes Here</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={EXPERIENCE}
+            onBlur={(newContent) => setEXPERIENCE(newContent)}
           />
-          <input
-            type="text"
-            name="DisclosingAddress"
-            value={formData.DisclosingAddress}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          <label htmlFor="" className="-mb-4">List all the skills you have</label>
+          <JoditEditor
+            config={config}
+            ref={editor}
+            value={SKILLS}
+            onBlur={(newContent) => setSKILLS(newContent)}
           />
-          <input
-            type="text"
-            name="ReceivingName"
-            value={formData.ReceivingName}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="text" name="ReceivingAddress"
-
-            value={formData.ReceivingAddress}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="date" name="DISCLOSINGDate"
-
-            value={formData.DISCLOSINGDate}
-            onChange={handleChange}
-            placeholder="Enter Disclosing Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
-          <input
-            type="date" name="RECEIVINGDate"
-            value={formData.RECEIVINGDate}
-            onChange={handleChange}
-            placeholder="Enter Receiving Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
-          />
+          
 
           <button
             onClick={handleGeneratePDF}

@@ -7,12 +7,15 @@ import { useEffect, useRef } from "react";
 
 
 export default function Home() {
+
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
     DisclosingName: "John Deo",
     DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
     ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
+    ReceivingAddress: "86 Route 59, Airmont, New York",
+    State:"California",
+    TillDate:"2025-02-07",
     DISCLOSINGDate: "2025-02-07",
     RECEIVINGDate: "2025-02-07",
   });
@@ -68,7 +71,7 @@ export default function Home() {
 </head>
 <body>
     <h1>Non-Disclosure and Confidentiality Agreement</h1>
-    <p>This Non-Disclosure and Confidentiality Agreement (the “Agreement”) is entered into <strong>__________________</strong> (the “Effective Date”) by and between <strong>____________________</strong> (“[NAME]”) located at <strong>_______________________________</strong> and <strong>____________________</strong> (“[NAME]”) located at <strong>_________________________</strong>, also individually referred to as the “Party”, and collectively the “Parties”.</p>
+    <p>This Non-Disclosure and Confidentiality Agreement (the “Agreement”) is entered into <strong> ${formData.issuedDate}</strong> (the “Effective Date”) by and between <strong>${formData.DisclosingName}</strong> (“[NAME]”) located at <strong> ${formData.DisclosingAddress}</strong> and <strong> ${formData.ReceivingName}</strong> (“[NAME]”) located at <strong>${formData.ReceivingAddress}</strong>, also individually referred to as the “Party”, and collectively the “Parties”.</p>
     
     <p>The Parties are interested in exploring a potential business opportunity (the “Opportunity”). In order to adequately evaluate whether the Parties would like to pursue the Opportunity, it is necessary for both Parties to exchange certain confidential information.</p>
     
@@ -93,7 +96,7 @@ export default function Home() {
     <p>Upon termination of this Agreement, the receiving party must return all tangible materials containing Confidential Information, including electronic and hard copies.</p>
     
     <h2>5. Term and Termination</h2>
-    <p>This Agreement shall commence upon the Effective Date and continue until <strong>__________________</strong>.</p>
+    <p>This Agreement shall commence upon the Effective Date and continue until <strong> ${formData.TillDate}</strong>.</p>
     <p>Either Party may end this Agreement at any time by providing written notice to the other Party. The obligation to maintain confidentiality remains in effect indefinitely.</p>
     
     <h2>6. Remedies</h2>
@@ -107,7 +110,7 @@ export default function Home() {
     <h2>8. General</h2>
     <ul>
         <li><strong>Assignment:</strong> The Parties may not assign their rights and obligations under this Agreement.</li>
-        <li><strong>Choice of Law:</strong> This Agreement will be interpreted based on the laws of the State of <strong>____________________</strong>.</li>
+        <li><strong>Choice of Law:</strong> This Agreement will be interpreted based on the laws of the State of <strong>${formData.State}</strong>.</li>
         <li><strong>Complete Contract:</strong> This Agreement supersedes any other written or verbal communications.</li>
         <li><strong>Severability:</strong> If any provision is deemed invalid, the remainder shall continue in full force.</li>
         <li><strong>Waiver:</strong> No provision of this Agreement can be waived unless agreed to in writing.</li>
@@ -117,11 +120,11 @@ export default function Home() {
     <p>All notices under this Agreement must be sent by email with return receipt requested or certified mail.</p>
     
     <h2>10. Signatures</h2>
-    <p><strong>Name:</strong> ___________________________</p>
-    <p><strong>Date:</strong> ___________________________</p>
+    <p><strong>Name:</strong> ${formData.DisclosingName}</p>
+    <p><strong>Date:</strong> ${formData.DISCLOSINGDate}</p>
     <br>
-    <p><strong>Name:</strong> ___________________________</p>
-    <p><strong>Date:</strong> ___________________________</p>
+    <p><strong>Name:</strong> ${formData.DisclosingName}</p>
+    <p><strong>Date:</strong> ${formData.DISCLOSINGDate}</p>
 </body>
 </html>
 `;
@@ -157,6 +160,7 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
           <input
             type="date"
             name="issuedDate"
@@ -165,6 +169,7 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Name</label>
           <input
             type="text"
             name="DisclosingName"
@@ -173,6 +178,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Address</label>
           <input
             type="text"
             name="DisclosingAddress"
@@ -181,6 +187,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Name</label>
           <input
             type="text"
             name="ReceivingName"
@@ -189,6 +196,7 @@ export default function Home() {
             placeholder="Enter Receiving Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Address</label>
           <input
             type="text" name="ReceivingAddress"
 
@@ -197,6 +205,25 @@ export default function Home() {
             placeholder="Enter Receiving Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter State Name</label>
+          <input
+            type="text" name="State"
+
+            value={formData.State}
+            onChange={handleChange}
+            placeholder="Enter State"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Till Date</label>
+          <input
+            type="date" name="TillDate"
+
+            value={formData.TillDate}
+            onChange={handleChange}
+            placeholder="Enter Till Date"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party Date</label>
           <input
             type="date" name="DISCLOSINGDate"
 
@@ -205,6 +232,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party Date</label>
           <input
             type="date" name="RECEIVINGDate"
             value={formData.RECEIVINGDate}

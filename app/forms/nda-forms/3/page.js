@@ -10,9 +10,12 @@ export default function Home() {
   const [formData, setFormData] = useState({
     issuedDate: "2025-02-07",
     DisclosingName: "John Deo",
+    OwnedBy: "XYZ LLC",
+    EffectedDate: "2 Months",
+    ExecutedAs: "2025-02-07",
     DisclosingAddress: "420 S Broad St, Winston-Salem, North Carolina",
     ReceivingName: "David Mark",
-    ReceivingAddress: "	86 Route 59, Airmont, New York",
+    ReceivingAddress: "86 Route 59, Airmont, New York",
     DISCLOSINGDate: "2025-02-07",
     RECEIVINGDate: "2025-02-07",
   });
@@ -82,38 +85,38 @@ export default function Home() {
         <h1>NON-DISCLOSURE AGREEMENT</h1>
 
         <p>
-            This Agreement is made and entered by and between <span>_____________________</span> and 
-            <span>_____________________</span>. 
+            This Agreement is made and entered by and between <span>${formData.DisclosingName}</span> and 
+            <span>${formData.ReceivingName}</span>. 
             This Agreement is being executed to protect Confidential Information owned by 
-            <span>_____________________</span>.
+            <span>${formData.OwnedBy}</span>.
         </p>
 
         <p>
-            <span>_____________________</span> and the Receiving Party do hereby agree, as follows:
+            <span>${formData.DisclosingName}</span> and the Receiving Party do hereby agree, as follows:
         </p>
 
         <ol>
             <li>Keep all information provided relating to business, marketing plans, discussions, research, design, and any related programs and processes under development in strict confidence.</li>
             <li>Disclose this information only to individuals who have signed a Non-Disclosure Agreement.</li>
             <li>This Agreement shall be in effect for 
-                <span>___________</span> from the date of the last disclosure of Confidential and Proprietary Information, at which time it will terminate.
+                <span>${formData.EffectedDate}</span> from the date of the last disclosure of Confidential and Proprietary Information, at which time it will terminate.
             </li>
         </ol>
 
         <p>This Agreement may be modified upon written agreement between the Parties.</p>
 
-        <p>Executed as of <span>___________</span></p>
+        <p>Executed as of <span>${formData.ExecutedAs}</span></p>
 
         <div class="signature-box">
             <div>
-                <p>_____________________</p>
+                <p>${formData.DisclosingName}</p>
                 <p>Printed Name & Signature (Disclosing Party)</p>
-                <p>Address: _____________________</p>
+                <p>Address: ${formData.DisclosingAddress}</p>
             </div>
             <div>
-                <p>_____________________</p>
+                <p>${formData.ReceivingName}</p>
                 <p>Printed Name & Signature (Receiving Party)</p>
-                <p>Address: _____________________</p>
+                <p>Address: ${formData.ReceivingAddress}</p>
             </div>
         </div>
 
@@ -154,6 +157,8 @@ export default function Home() {
         {/* Editing Section */}
         <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+
           <input
             type="date"
             name="issuedDate"
@@ -162,6 +167,8 @@ export default function Home() {
             placeholder="Enter Issued Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Name</label>
+
           <input
             type="text"
             name="DisclosingName"
@@ -170,6 +177,26 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Name of Owner</label>
+
+          <input
+            type="text"
+            name="OwnedBy"
+            value={formData.OwnedBy}
+            onChange={handleChange}
+            placeholder="Enter Name of Owner"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Time Frame of Contract</label>
+          <input
+            type="text"
+            name="EffectedDate"
+            value={formData.EffectedDate}
+            onChange={handleChange}
+            placeholder="Enter Time Frame of Contract"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Address</label>
           <input
             type="text"
             name="DisclosingAddress"
@@ -178,6 +205,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Name</label>
           <input
             type="text"
             name="ReceivingName"
@@ -186,6 +214,7 @@ export default function Home() {
             placeholder="Enter Receiving Party's Name"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party's Address</label>
           <input
             type="text" name="ReceivingAddress"
 
@@ -194,6 +223,17 @@ export default function Home() {
             placeholder="Enter Receiving Party's Address"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Execuetion Date</label>
+          <input
+            type="date" name="ExecutedAs"
+
+            value={formData.ExecutedAs}
+            onChange={handleChange}
+            placeholder="Enter Execuetion Date"
+            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+          />
+
+          <label htmlFor="" className="-mb-4">Enter Disclosing Party Date</label>
           <input
             type="date" name="DISCLOSINGDate"
 
@@ -202,6 +242,7 @@ export default function Home() {
             placeholder="Enter Disclosing Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
+          <label htmlFor="" className="-mb-4">Enter Receiving Party Date</label>
           <input
             type="date" name="RECEIVINGDate"
             value={formData.RECEIVINGDate}
@@ -209,7 +250,7 @@ export default function Home() {
             placeholder="Enter Receiving Party Date"
             className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
           />
-         
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
