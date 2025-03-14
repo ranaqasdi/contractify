@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 export default function Footer() {
     return (
         <footer className="bg-purple-900 text-white py-10">
-            <div className="max-w-[70%] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:max-w-[70%]  mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 {/* Left - Company Info */}
                 <div className="pr-10">
