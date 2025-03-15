@@ -173,14 +173,13 @@ export default function Home() {
       }
     }, [rawHtml]);
 
-    return <iframe ref={iframeRef} title="HTML Preview" className="h-full" />;
-  };
+return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600px]" />;  };
 
   return (
     <>
-      <div className="flex m-10 rounded-xl overflow-hidden shadow-md">
+       <div className="flex m-10 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto p-20  flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
           <input
             type="date"

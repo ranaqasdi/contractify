@@ -15,8 +15,8 @@ function page(props) {
 
     <section className='flex items-center flex-col py-20'>
     <h2 className="text-blue-950 mb-12 font-bold text-3xl" >Which Template Of Document You Like The Most?</h2>
-        <div className='flex w-[70%] justify-between gap-x-14'>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
+        <div className='flex lg:w-[70%] w-[90%] lg:flex-row flex-col gap-y-10 justify-between gap-x-14'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
                 <Link href={"/forms/influencer-contract/1"}>
                 <img className='w-full h-[250px] object-cover object-top' src="/images/influencer-contract01.png" alt="" />
                 <div className=' py-5 px-6'>
@@ -26,7 +26,7 @@ function page(props) {
                 </div>
                 </Link>
             </div>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
             <Link href={"/"}>
                 <img className='w-full h-[250px] object-cover object-top' src="/images/5.png" alt="" />
                 <div className=' py-5 px-6'>
@@ -36,7 +36,7 @@ function page(props) {
                 </div>
                 </Link>
             </div>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg transition duration-300'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
             <Link href={"/"}>
                 <img className='w-full h-[250px] object-cover object-top' src="/images/5.png" alt="" />
                 <div className=' py-5 px-6'>

@@ -64,8 +64,7 @@ export default function Home() {
       }
     }, [rawHtml]);
 
-    return <iframe ref={iframeRef} title="HTML Preview" className="h-full" />;
-  };
+return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600px]" />;  };
 
   return (
     <>

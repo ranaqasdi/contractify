@@ -28,8 +28,8 @@ export default function Testimonials() {
     ];
   
     return (
-      <div className="max-w-[70%] mx-auto px-4 py-24">
-        <h2 className="text-5xl text-purple-600 font-bold text-center mb-12">What Our Clients Say</h2>
+      <div className="md:max-w-[70%] w-[90%] mx-auto px-4 py-24">
+        <h2 className="lg:text-5xl text-3xl text-purple-600 font-bold text-center mb-12">What Our Clients Say</h2>
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 grid-auto-rows">
           {testimonials.map((testimonial, index) => (

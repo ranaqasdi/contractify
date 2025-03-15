@@ -56,7 +56,7 @@ function StatCard({ label, value }) {
       viewport={{ once: true }}
       className="p-6 bg-white shadow-lg rounded-2xl"
     >
-      <h3 className="text-4xl font-bold text-blue-600">{count}+</h3>
+      <h3 className="text-4xl font-bold text-purple-600">{count}+</h3>
       <p className="text-gray-600">{label}</p>
     </motion.div>
   );
