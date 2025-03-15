@@ -160,7 +160,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex m-10 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
+      <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
         <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
@@ -262,7 +262,7 @@ export default function Home() {
         </div>
 
         {/* Preview Section */}
-        <div className="p-10  flex gap-y-5 flex-col w-full bg-purple-600">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-purple-600">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>
