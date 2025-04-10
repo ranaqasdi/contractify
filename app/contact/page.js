@@ -13,16 +13,16 @@ export default function page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-
+  
     try {
       const res = await fetch("https://gold-hawk-364161.hostingersite.com/contact.php", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: new URLSearchParams(formData).toString(),
+        body: JSON.stringify(formData),
       });
-
+  
       const result = await res.json();
       if (result.success) {
         setStatus("Message sent successfully!");
@@ -35,6 +35,7 @@ export default function page() {
       setStatus("An error occurred while sending.");
     }
   };
+  
 
 
   
