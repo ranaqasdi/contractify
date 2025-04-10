@@ -243,9 +243,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter ID</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter ID</label>
 
           <input
             type="text"
@@ -253,9 +253,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.Id}
             onChange={handleChange}
             placeholder="Enter Invoice Id"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Issued Date</label>
 
           <input
             type="date"
@@ -263,54 +263,54 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Name</label>
           <input
             type="text"
             name="yourName"
             value={formData.yourName}
             onChange={handleChange}
             placeholder="Enter Client Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Department Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Department Name</label>
           <input
             type="text"
             name="Department"
             value={formData.Department}
             onChange={handleChange}
             placeholder="Enter Department Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Employee ID</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Employee ID</label>
           <input
             type="text"
             name="EmployeeID"
             value={formData.EmployeeID}
             onChange={handleChange}
             placeholder="Enter Employee ID "
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           /> 
-          <label htmlFor="" className="-mb-4">Enter Start Time</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Start Time</label>
           <input
             type="date" name="startTime"
 
             value={formData.startTime}
             onChange={handleChange}
             placeholder="Enter Start Time"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter End Time</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter End Time</label>
           <input
             type="date" name="endTime"
 
             value={formData.endTime}
             onChange={handleChange}
             placeholder="Enter End Time"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Date, Category and Description</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Date, Category and Description</label>
 
           {lineItems.map((item, index) => (
             <div key={index} className="flex justify-between gap-2 mb-2">
@@ -364,14 +364,14 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             Add Row
           </button>
 
-          <label htmlFor="" className="-mb-4">Enter Manager Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Manager Name</label>
           <input
             type="text" name="ManagerName"
 
             value={formData.ManagerName}
             onChange={handleChange}
             placeholder="Enter  Manager Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <button
             onClick={handleGeneratePDF}
@@ -391,7 +391,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

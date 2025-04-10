@@ -21,8 +21,8 @@ function page(props) {
                 <img className='w-full h-[250px] object-cover object-top' src="/images/nda-form01.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT Template</h2>
-                <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                <h2 className='text-blue-950 font-semibold text-xl  mb-2'>NON-DISCLOSURE AGREEMENT Template</h2>
+                <p className='mt-1'>Easily create custom Non-Disclosure Agreements with our live PDF editor. Secure your ideas and share confidently—no legal hassle.</p>
                 </div>
                 </Link>
             </div>
@@ -31,8 +31,8 @@ function page(props) {
                 <img className='w-full h-[250px] object-cover object-top' src="/images/nda02.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT & Confidentiality  Template</h2>
-                <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                <h2 className='text-blue-950 font-semibold text-xl mb-2'>NON-DISCLOSURE AGREEMENT & Confidentiality  Template</h2>
+                <p className='mt-1'>Easily create custom Non-Disclosure Agreements with our live PDF editor. Secure your ideas and share confidently—no legal hassle.</p>
                 </div>
                 </Link>
             </div>
@@ -41,8 +41,8 @@ function page(props) {
                 <img className='w-full h-[250px] object-cover object-top' src="/images/nda03.png" alt="" />
                 <div className=' py-5 px-6'>
 
-                <h2 className='text-blue-950 font-semibold text-xl'>NON-DISCLOSURE AGREEMENT Template</h2>
-                <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                <h2 className='text-blue-950 font-semibold text-xl mb-2'>NON-DISCLOSURE AGREEMENT Template</h2>
+                <p className='mt-1'>Easily create custom Non-Disclosure Agreements with our live PDF editor. Secure your ideas and share confidently—no legal hassle.</p>
                 </div>
                 </Link>
             </div>

@@ -179,15 +179,15 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
           <input
             type="date"
             name="issuedDate"
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text"
@@ -195,7 +195,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.FreelancerName}
             onChange={handleChange}
             placeholder="Enter Freelancer Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text"
@@ -203,7 +203,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.ClientName}
             onChange={handleChange}
             placeholder="Enter Client Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text"
@@ -211,17 +211,17 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.ProjectName}
             onChange={handleChange}
             placeholder="Enter Project Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
-          <label htmlFor="" className="-mb-4">Details About Responsibilities</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Details About Responsibilities</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={SOW}
             onBlur={(newContent) => setSOW(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Details About Responsibilities</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Details About Responsibilities</label>
           <JoditEditor
             config={config}
             ref={editor}
@@ -234,7 +234,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.StartDate}
             onChange={handleChange}
             placeholder="Enter Start Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="date" name="EndDate"
@@ -242,28 +242,28 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.EndDate}
             onChange={handleChange}
             placeholder="Enter End Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text" name="Revisions"
             value={formData.Revisions}
             onChange={handleChange}
             placeholder="Enter Number of Revisions"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text" name="Notice"
             value={formData.Notice}
             onChange={handleChange}
             placeholder="Enter Notice Period (days)"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
           <input
             type="text" name="Jurisdiction"
             value={formData.Jurisdiction}
             onChange={handleChange}
             placeholder="Enter Jurisdiction"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
           <button
@@ -284,7 +284,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

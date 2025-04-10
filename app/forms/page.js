@@ -21,8 +21,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/nda-form01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>NDA FORMS</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>NDA FORMS</h2>
+                                <p>Easily create custom Non-Disclosure Agreements with our live PDF editor. Secure your ideas and share confidently—no legal hassle.</p>
                             </div>
                         </Link>
                     </div>
@@ -31,8 +31,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/employment1.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Employment Contract Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Employment Contract</h2>
+                                <p>Define job roles, responsibilities, and terms of employment to ensure transparency and alignment between employers and new hires.</p>
                             </div>
                         </Link>
                     </div>
@@ -41,8 +41,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/influencer-contract01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Influencer Contract Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Influencer Contract</h2>
+                                <p>Set clear expectations between brands and influencers with tailored contracts that outline content requirements, deadlines, and compensation.</p>
                             </div>
                         </Link>
                     </div>
@@ -58,8 +58,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/resume01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Resume Templates</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Resume Templates</h2>
+                                <p>Create a professional and polished resume with our easy-to-use templates, tailored to showcase your skills and experience.</p>
                             </div>
                         </Link>
                     </div>
@@ -68,8 +68,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/estimate01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Estimate Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Estimate Template</h2>
+                                <p>Quickly generate accurate and detailed estimates for your clients, ensuring transparency and professionalism in every project.</p>
                             </div>
                         </Link>
                     </div>
@@ -78,8 +78,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/lease01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Property Rental Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Property Rental Template</h2>
+                                <p>Easily create customized property rental agreements that protect both landlords and tenants, ensuring clear terms and smooth transactions.</p>
                             </div>
                         </Link>
                     </div>
@@ -95,8 +95,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/freelance01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Freelance Contract</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Freelance Contract</h2>
+                                <p>Craft professional freelance contracts with ease, outlining clear terms and expectations to foster successful collaborations and secure payment.</p>
                             </div>
                         </Link>
                     </div>
@@ -105,8 +105,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/business01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Business Plan Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Business Plan Template</h2>
+                                <p>Create a comprehensive and structured business plan to outline your company's vision, goals, and strategy for success, helping you attract investors and stay on track.</p>
                             </div>
                         </Link>
                     </div>
@@ -115,8 +115,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/invoice01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Invoice Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Invoice Template</h2>
+                                <p>Easily create professional and clear invoices for your business transactions. Customize with your branding and details for smooth payments and record-keeping.</p>
                             </div>
                         </Link>
                     </div>
@@ -131,8 +131,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/expense01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Expense Report Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Expense Report Template</h2>
+                                <p>Track and organize your business expenses effortlessly with our customizable expense report template. Ensure accurate financial management and smooth reimbursement processes.</p>
                             </div>
                         </Link>
                     </div>
@@ -141,8 +141,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/business01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Business Plan Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Business Plan Template</h2>
+                                <p>Create a comprehensive and professional business plan with ease. Our customizable template helps you outline your goals, strategies, and financial projections to attract investors </p>
                             </div>
                         </Link>
                     </div>
@@ -151,8 +151,8 @@ function Forms(props) {
                             <img className='w-full h-[250px] object-cover object-top' src="/images/invoice01.png" alt="" />
                             <div className=' py-5 px-6'>
 
-                                <h2 className='text-[#5d17eb] font-semibold text-xl'>Invoice Template</h2>
-                                <p>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
+                                <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Invoice Template</h2>
+                                <p>Generate professional invoices quickly and easily with our customizable template. Perfect for freelancers, small businesses, and contractors, ensuring clear and accurate billing for your products or services.</p>
                             </div>
                         </Link>
                     </div>

@@ -263,9 +263,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Invoice ID</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Invoice ID</label>
 
           <input
             type="text"
@@ -273,9 +273,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.invoiceId}
             onChange={handleChange}
             placeholder="Enter Invoice Id"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Issued Date</label>
 
           <input
             type="date"
@@ -283,81 +283,81 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Client Name</label>
           <input
             type="text"
             name="clientName"
             value={formData.clientName}
             onChange={handleChange}
             placeholder="Enter Client Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Company Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Client Company Name</label>
           <input
             type="text"
             name="clientcompanyName"
             value={formData.clientcompanyName}
             onChange={handleChange}
             placeholder="Enter Client Company Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Company Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Client Company Address</label>
           <input
             type="text"
             name="clientcompanyAddress"
             value={formData.clientcompanyAddress}
             onChange={handleChange}
             placeholder="Enter Client Company Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Client Email Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Client Email Address</label>
           <input
             type="email" name="clientEmail"
 
             value={formData.clientEmail}
             onChange={handleChange}
             placeholder="Enter Client Email Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Name</label>
           <input
             type="email" name="yourName"
 
             value={formData.yourName}
             onChange={handleChange}
             placeholder="Enter Your Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Company Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Company Name</label>
           <input
             type="email" name="companyName"
 
             value={formData.companyName}
             onChange={handleChange}
             placeholder="Enter Your Company Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Company Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Company Address</label>
           <input
             type="text" name="companyAddress"
 
             value={formData.companyAddress}
             onChange={handleChange}
             placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Email Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Email Address</label>
           <input
             type="email" name="yourEmail"
 
             value={formData.yourEmail}
             onChange={handleChange}
             placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Items, Price Per Unit and Quantity</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Items, Price Per Unit and Quantity</label>
 
           {lineItems.map((item, index) => (
             <div key={index} className="flex justify-between gap-2 mb-2">
@@ -430,7 +430,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

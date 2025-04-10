@@ -202,165 +202,165 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Issued Date</label>
           <input
             type="date"
             name="issuedDate"
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter  Landlord Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter  Landlord Name</label>
           <input
             type="text"
             name="LandlordName"
             value={formData.LandlordName}
             onChange={handleChange}
             placeholder="Enter Landlord Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Landlord Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Landlord Address</label>
           <input
             type="text"
             name="LandlordAddress"
             value={formData.LandlordAddress}
             onChange={handleChange}
             placeholder="Enter Landlord Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Tenant Namet</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Tenant Namet</label>
           <input
             type="text"
             name="TenantName"
             value={formData.TenantName}
             onChange={handleChange}
             placeholder="Enter Tenant Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Tenant Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Tenant Address</label>
           <input
             type="text"
             name="TenantAddress"
             value={formData.TenantAddress}
             onChange={handleChange}
             placeholder="Enter Tenant Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Propert Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Propert Address</label>
           <input
             type="text"
             name="PropertyAddress"
             value={formData.PropertyAddress}
             onChange={handleChange}
             placeholder="Enter Property Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Start Date Of Contract</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Start Date Of Contract</label>
           <input
             type="Date"
             name="StartDate"
             value={formData.StartDate}
             onChange={handleChange}
             placeholder="Enter Start Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter End Date Of Contract</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter End Date Of Contract</label>
           <input
             type="Date"
             name="EndDate"
             value={formData.EndDate}
             onChange={handleChange}
             placeholder="Enter End Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Total Rent Amount</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Total Rent Amount</label>
           <input
             type="text"
             name="RentAmount"
             value={formData.RentAmount}
             onChange={handleChange}
             placeholder="Enter Rent Amount"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Rent Late Fee</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Rent Late Fee</label>
           <input
             type="text"
             name="LateFee"
             value={formData.LateFee}
             onChange={handleChange}
             placeholder="Enter Late Fee"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Amount of Initial Deposit</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Amount of Initial Deposit</label>
           <input
             type="text"
             name="Deposit"
             value={formData.Deposit}
             onChange={handleChange}
             placeholder="Enter Deposit"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Deposit Return Time</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Deposit Return Time</label>
           <input
             type="text"
             name="Return"
             value={formData.Return}
             onChange={handleChange}
             placeholder="Enter Return"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
-          <label htmlFor="" className="-mb-4">Details About Responsibilities</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Details About Responsibilities</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={Utilities}
             onBlur={(newContent) => setUtilities(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Enter Inpection Entry Notice Period</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Inpection Entry Notice Period</label>
           <input
             type="text" name="EntryNotice"
 
             value={formData.EntryNotice}
             onChange={handleChange}
             placeholder="Enter Entry Notice"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Details About Pets and Smoking</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Details About Pets and Smoking</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={Pets}
             onBlur={(newContent) => setPets(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Enter Notice Period</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Notice Period</label>
           <input
             type="text" name="Notice"
 
             value={formData.Notice}
             onChange={handleChange}
             placeholder="Enter Notice"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Early Termination Fee</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Early Termination Fee</label>
           <input
             type="text" name="TerminationFee"
 
             value={formData.TerminationFee}
             onChange={handleChange}
             placeholder="Enter Early Termination Fee"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter State</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter State</label>
           <input
             type="text" name="State"
             value={formData.State}
             onChange={handleChange}
             placeholder="Enter State"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
           <button
@@ -381,7 +381,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

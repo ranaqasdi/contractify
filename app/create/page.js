@@ -74,7 +74,7 @@ export default function CreateFolder() {
       value={formData.${p}}
       onChange={handleChange}
       placeholder="Enter ${p}"
-      className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+      className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
     />`
     )
     .join("\n");

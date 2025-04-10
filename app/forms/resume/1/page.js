@@ -136,66 +136,66 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Your Full Name</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Full Name</label>
           <input
             type="text"
             name="Name"
             value={formData.Name}
             onChange={handleChange}
             placeholder="Enter Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Your Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Address</label>
           <input
             type="text"
             name="Address"
             value={formData.Address}
             onChange={handleChange}
             placeholder="Enter Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Phone Number</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Phone Number</label>
           <input
             type="tel"
             name="PhoneNo"
             value={formData.PhoneNo}
             onChange={handleChange}
             placeholder="Enter Phone Number"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Email Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Email Address</label>
           <input
             type="email"
             name="EmailAddress"
             value={formData.EmailAddress}
             onChange={handleChange}
             placeholder="Enter Email Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Explain Objective of this resume</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Explain Objective of this resume</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={OBJECTIVE}
             onBlur={(newContent) => setOBJECTIVE(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Details About Your Education</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Details About Your Education</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={EDUCATION}
             onBlur={(newContent) => setEDUCATION(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Work Experience Goes Here</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Work Experience Goes Here</label>
           <JoditEditor
             config={config}
             ref={editor}
             value={EXPERIENCE}
             onBlur={(newContent) => setEXPERIENCE(newContent)}
           />
-          <label htmlFor="" className="-mb-4">List all the skills you have</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">List all the skills you have</label>
           <JoditEditor
             config={config}
             ref={editor}
@@ -222,7 +222,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

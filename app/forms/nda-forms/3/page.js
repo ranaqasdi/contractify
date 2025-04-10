@@ -154,9 +154,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Issued Date</label>
 
           <input
             type="date"
@@ -164,9 +164,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Disclosing Party's Name</label>
 
           <input
             type="text"
@@ -174,9 +174,9 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.DisclosingName}
             onChange={handleChange}
             placeholder="Enter Disclosing Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Name of Owner</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Name of Owner</label>
 
           <input
             type="text"
@@ -184,70 +184,70 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             value={formData.OwnedBy}
             onChange={handleChange}
             placeholder="Enter Name of Owner"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Time Frame of Contract</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Time Frame of Contract</label>
           <input
             type="text"
             name="EffectedDate"
             value={formData.EffectedDate}
             onChange={handleChange}
             placeholder="Enter Time Frame of Contract"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Disclosing Party's Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Disclosing Party's Address</label>
           <input
             type="text"
             name="DisclosingAddress"
             value={formData.DisclosingAddress}
             onChange={handleChange}
             placeholder="Enter Disclosing Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Receiving Party's Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Receiving Party's Name</label>
           <input
             type="text"
             name="ReceivingName"
             value={formData.ReceivingName}
             onChange={handleChange}
             placeholder="Enter Receiving Party's Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Receiving Party's Address</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Receiving Party's Address</label>
           <input
             type="text" name="ReceivingAddress"
 
             value={formData.ReceivingAddress}
             onChange={handleChange}
             placeholder="Enter Receiving Party's Address"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Execuetion Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Execuetion Date</label>
           <input
             type="date" name="ExecutedAs"
 
             value={formData.ExecutedAs}
             onChange={handleChange}
             placeholder="Enter Execuetion Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
-          <label htmlFor="" className="-mb-4">Enter Disclosing Party Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Disclosing Party Date</label>
           <input
             type="date" name="DISCLOSINGDate"
 
             value={formData.DISCLOSINGDate}
             onChange={handleChange}
             placeholder="Enter Disclosing Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Receiving Party Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Receiving Party Date</label>
           <input
             type="date" name="RECEIVINGDate"
             value={formData.RECEIVINGDate}
             onChange={handleChange}
             placeholder="Enter Receiving Party Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
           <button
@@ -268,7 +268,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

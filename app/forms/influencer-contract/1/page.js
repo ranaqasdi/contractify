@@ -178,36 +178,36 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
-          <h2 className="text-2xl font-bold">Edit Legal Document</h2>
-          <label htmlFor="" className="-mb-4">Enter Issued Date</label>
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+          <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Issued Date</label>
           <input
             type="date"
             name="issuedDate"
             value={formData.issuedDate}
             onChange={handleChange}
             placeholder="Enter Issued Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Brand Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Brand Name</label>
           <input
             type="text"
             name="BrandName"
             value={formData.BrandName}
             onChange={handleChange}
             placeholder="Enter Brand Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Influencer Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Influencer Name</label>
           <input
             type="text"
             name="Influencer"
             value={formData.Influencer}
             onChange={handleChange}
             placeholder="Enter Influencer Name"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Scope Of Work</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Scope Of Work</label>
 
           <JoditEditor
             key={ScopeOFWork} // This forces the editor to re-initialize when content changes
@@ -216,65 +216,65 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             config={config}
             onBlur={(newContent) => setScopeOFWork(newContent)}
           />
-          <label htmlFor="" className="-mb-4">Enter Total Payment</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Total Payment</label>
           <input
             type="text"
             name="Payment"
             value={formData.Payment}
             onChange={handleChange}
             placeholder="Enter Payment"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Compensation</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Compensation</label>
           <input
             type="text" name="Compensation"
 
             value={formData.Compensation}
             onChange={handleChange}
             placeholder="Enter Compensation"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Exclusivity</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Exclusivity</label>
           <input
             type="text" name="Exclusivity"
 
             value={formData.Exclusivity}
             onChange={handleChange}
             placeholder="Enter Exclusivity"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Termination Notice Period (in days)</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Termination Notice Period (in days)</label>
           <input
             type="text" name="Termination"
 
             value={formData.Termination}
             onChange={handleChange}
             placeholder="3"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Brand Representative's Name</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Brand Representative's Name</label>
           <input
             type="text" name="BRName"
             value={formData.BRName}
             onChange={handleChange}
             placeholder="Enter Brand Representative"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Brand Signature Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Brand Signature Date</label>
           <input
             type="date" name="BRDate"
             value={formData.BRDate}
             onChange={handleChange}
             placeholder="Enter Brand Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          <label htmlFor="" className="-mb-4">Enter Influencer Signature Date</label>
+          <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Influencer Signature Date</label>
           <input
             type="date" name="IDate"
             value={formData.IDate}
             onChange={handleChange}
             placeholder="Enter Influencer Date"
-            className="py-4 bg-slate-400 text-white placeholder:text-white px-4 rounded shadow-md"
+            className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
 
           <button
@@ -295,7 +295,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>
