@@ -21,19 +21,18 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold">Quick Links</h3>
                     <ul className="mt-2 space-y-2 text-gray-400">
+                        <li><a href="/" className="hover:text-gray-300">Home</a></li>
                         <li><a href="/about" className="hover:text-gray-300">About Us</a></li>
-                        <li><a href="/services" className="hover:text-gray-300">Services</a></li>
                         <li><a href="/contact" className="hover:text-gray-300">Contact</a></li>
-                        <li><a href="/blog" className="hover:text-gray-300">Blog</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 className="text-lg font-semibold">Quick Links</h3>
+                    <h3 className="text-lg font-semibold">Top Templates</h3>
                     <ul className="mt-2 space-y-2 text-gray-400">
-                        <li><a href="/about" className="hover:text-gray-300">About Us</a></li>
-                        <li><a href="/services" className="hover:text-gray-300">Services</a></li>
-                        <li><a href="/contact" className="hover:text-gray-300">Contact</a></li>
-                        <li><a href="/blog" className="hover:text-gray-300">Blog</a></li>
+                        <li><a href="/forms/influencer-contract/1" className="hover:text-gray-300">Influencer Contract</a></li>
+                        <li><a href="/forms/resume/1" className="hover:text-gray-300">Resume Templates</a></li>
+                        <li><a href="/forms/nda-forms" className="hover:text-gray-300">NDA FORMS</a></li>
+                        <li><a href="/forms/lease/1" className="hover:text-gray-300">Property Rental Template</a></li>
                     </ul>
                 </div>
 

@@ -136,7 +136,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-5/12 bg-[#B2BEB5]">
+        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col lg:w-5/12  w-full bg-[#B2BEB5]">
           <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
           <label htmlFor="" className="-mb-4 text-[#525a54] font-medium">Enter Your Full Name</label>
           <input
@@ -222,7 +222,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-7/12 bg-[#9faca2]">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col lg:w-7/12  w-full bg-[#9faca2]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>
