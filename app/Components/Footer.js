@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="bg-purple-900 text-white py-10">
+        <footer className="bg-[#5d17eb] text-white pt-10">
             <div className="md:max-w-[70%]  mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 {/* Left - Company Info */}
@@ -51,8 +51,8 @@ export default function Footer() {
             </div>
 
             {/* Bottom - Copyright */}
-            <div className="mt-8 text-center text-purple-300 border-t border-gray-700 pt-4">
-                © {new Date().getFullYear()} Templik. All rights reserved | Developed By <a href="https://xtreamstudios.com/" target="_blank">Xtream Studios</a>.
+            <div className="mt-14 text-center text-purple-300 border-t border-gray-700 py-5 ">
+                <p className="leading-none">© {new Date().getFullYear()} Templik. All rights reserved | Developed By <a href="https://xtreamstudios.com/" target="_blank">Xtream Studios</a>.</p>
             </div>
         </footer>
     );

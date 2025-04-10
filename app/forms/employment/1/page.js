@@ -246,7 +246,7 @@ export default function Home() {
 
           <button
             onClick={handleGeneratePDF}
-            className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
+            className="py-4 bg-[#5d17eb] text-white placeholder:text-white px-4 rounded shadow-md hover:bg-[#5d17eb] transition-colors duration-300"
           >
             Generate PDF
           </button>
@@ -262,7 +262,7 @@ export default function Home() {
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-purple-600">
+        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-[#5d17eb]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

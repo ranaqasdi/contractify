@@ -11,7 +11,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <div className="flex justify-center mx-auto px-6 py-28 bg-purple-50">
+    <div className="flex justify-center mx-auto px-6 py-28 bg-[#5d17eb15]">
       <div className=" w-max-5xl">
 
 
@@ -56,7 +56,7 @@ function StatCard({ label, value }) {
       viewport={{ once: true }}
       className="p-6 bg-white shadow-lg rounded-2xl"
     >
-      <h3 className="text-4xl font-bold text-purple-600">{count}+</h3>
+      <h3 className="text-4xl font-bold text-[#5d17eb]">{count}+</h3>
       <p className="text-gray-600">{label}</p>
     </motion.div>
   );

@@ -50,7 +50,7 @@ export default function Home() {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
     <title>Non-Disclosure Agreement</title>
     <style>
         body {
@@ -225,7 +225,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
        <div className="flex lg:m-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200  ">
+        <div className="overflow-y-auto w-5/12 lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col  bg-slate-200  ">
           <h2 className="text-2xl font-bold">Edit Legal Document</h2>
           <label htmlFor="" className="-mb-4">Enter Issued Date</label>
           <input
@@ -293,7 +293,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
          
           <button
             onClick={handleGeneratePDF}
-            className="py-4 bg-purple-600 text-white placeholder:text-white px-4 rounded shadow-md hover:bg-purple-700 transition-colors duration-300"
+            className="py-4 bg-[#5d17eb] text-white placeholder:text-white px-4 rounded shadow-md hover:bg-[#5d17eb] transition-colors duration-300"
           >
             Generate PDF
           </button>
@@ -309,7 +309,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4  flex gap-y-5 flex-col w-full bg-purple-600">
+        <div className="lg:p-10 p-4 w-7/12  flex gap-y-5 flex-col bg-[#5d17eb]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>
