@@ -65,7 +65,7 @@ function Forms(props) {
                     </div>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
                         <Link href={"/forms/estimate/1"}>
-                            <img className='w-full h-[250px] object-contain object-top' src="/images/Estimate01.webp" alt="" />
+                            <img className='w-full h-[250px] object-contain object-top' src="/images/estimate01.webp" alt="" />
                             <div className=' py-5 px-6 bg-[#5d17eb15]'>
 
                                 <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Estimate Template</h2>
