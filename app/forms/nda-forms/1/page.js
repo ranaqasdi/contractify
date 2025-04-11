@@ -220,13 +220,14 @@ export default function Home() {
       }
     }, [rawHtml]);
 
-return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600px]" />;  };
+    return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600px]" />;
+  };
 
   return (
     <>
-       <div className="flex lg:my-10 lg:mx-3 m-1 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
+      <div className="flex lg:my-10 lg:mx-3 m-1 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
-        <div className="overflow-y-auto lg:w-5/12  w-full lg:p-20 py-10 px-8 flex gap-y-5 max-h-[800px] flex-col  bg-[#B2BEB5] ">
+        <div className="overflow-y-auto lg:w-5/12 lg:order-1 order-2 w-full lg:p-20 py-10 px-8 flex gap-y-5 lg:max-h-[800px] max-h-fit  flex-col  bg-[#d7dbd8] ">
           <h2 className="text-2xl font-bold text-[#5d17eb]">Edit Legal Document</h2>
           <label htmlFor="" className="-mb-4 text-[#525a54] font-medium text-[#525a54] font-medium">Enter Issued Date</label>
           <input
@@ -290,8 +291,8 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
             placeholder="Enter Receiving Party Date"
             className="py-4 bg-white text-black placeholder:text-black px-4 rounded shadow-md"
           />
-          
-         
+
+
           <button
             onClick={handleGeneratePDF}
             className="py-4 bg-[#5d17eb] text-white placeholder:text-white px-4 rounded shadow-md hover:bg-[#5d17eb] transition-colors duration-300"
@@ -310,7 +311,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="lg:p-10 p-4 lg:lg:w-7/12  w-full w-full  flex gap-y-5 flex-col bg-[#9faca2]">
+        <div className="lg:p-10 p-4 lg:w-7/12  lg:order-2 order-1     w-full  flex gap-y-5 flex-col bg-[#bfc7c1]">
           {/* <div dangerouslySetInnerHTML={{ __html: rawHtml }} /> */}
           <HtmlPreview rawHtml={rawHtml()} />
         </div>

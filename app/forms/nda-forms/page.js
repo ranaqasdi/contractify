@@ -7,8 +7,8 @@ function page(props) {
     <>
     <section className='flex justify-center pt-36 pb-16 bg-[url(/images/4.png)] bg-cover bg-no-repeat bg-center'>
         <div className='flex w-[70%] justify-center items-center flex-col gap-y-4'>
-            <h2 className="text-blue-950 font-semibold text-6xl">1,800+ Jotform PDF Templates</h2>
-            <h2 className="text-blue-950 font-medium text-xl">With hundreds of templates for just as many industries, Jotform has the tools to meet your unique business needs.</h2>
+            <h2 className="font-semibold text-6xl text-[#5d17eb]">NDA FORM Templates</h2>
+            <h2 className="text-blue-950 font-medium text-xl">Easily create custom Non-Disclosure Agreements with our live PDF editor. Secure your ideas and share confidently—no legal hassle.</h2>
 
         </div>
     </section>

@@ -70,7 +70,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
     <>
       <div className="flex p-20">
         {/* Editing Section */}
-        <div className="overflow-y-auto p-20 flex gap-y-5 max-h-[800px] flex-col w-full bg-slate-200">
+        <div className="overflow-y-auto p-20 flex gap-y-5 lg:max-h-[800px] max-h-fit flex-col w-full bg-slate-200">
           <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>
 
           {placeholders.map((placeholder, index) => (
@@ -101,7 +101,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
         </div>
 
         {/* Preview Section */}
-        <div className="p-20 overflow-y-scroll max-h-[800px] flex gap-y-5 flex-col w-full bg-green-300">
+        <div className="p-20 overflow-y-scroll lg:max-h-[800px] max-h-fit flex gap-y-5 flex-col w-full bg-green-300">
           <HtmlPreview rawHtml={rawHtml()} />
         </div>
       </div>
