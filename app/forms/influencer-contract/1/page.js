@@ -69,7 +69,7 @@ export default function Home() {
     <style>
         body {
             font-family: Arial, sans-serif;
-           
+           zoom:0.8;
             line-height: 1.6;
             color: #333;
         }

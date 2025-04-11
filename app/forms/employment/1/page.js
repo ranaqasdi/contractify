@@ -58,7 +58,7 @@ export default function Home() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Part-Time Employment Contract</title>
     <style>
-        body {
+        body {zoom:0.8;
         background-color:white;
             font-family: Arial, sans-serif;
             margin: 40px;

@@ -100,7 +100,7 @@ export default function Home() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
     <style>
-        body {
+        body {zoom:0.8;
             font-family: Arial, sans-serif;
             background-color: #fff;
             padding: 60px;

@@ -87,7 +87,7 @@ export default function Home() {
 <html lang="en">
 <head>
     <style>
-        body {
+        body {zoom:0.8;
             font-family: Arial, sans-serif;
             margin: 40px;
             padding: 20px;

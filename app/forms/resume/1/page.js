@@ -56,7 +56,7 @@ export default function Home() {
 <head>
    
     <style>
-        body {
+        body {zoom:0.8;
         background-color:white;
             font-family: Arial, sans-serif;
             margin: 20px;
