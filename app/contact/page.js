@@ -16,11 +16,11 @@ export default function Page() {
 
     try {
       const response = await axios.post(
-        "https://gold-hawk-364161.hostingersite.com/contact.php",
-        formData,
+        "https://gold-hawk-364161.hostingersite.com/contact.php", // Your PHP backend URL
+        formData, 
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", // Sending JSON data
           },
         }
       );
