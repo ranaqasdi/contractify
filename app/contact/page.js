@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function Page() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -14,29 +15,21 @@ export default function Page() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch(
+      const response = await axios.post(
         "https://gold-hawk-364161.hostingersite.com/contact.php",
+        formData,
         {
-          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
         }
       );
 
-      const data = await res.json();
-
-      if (res.ok) {
-        console.log("Success:", data);
-        setStatus("Message sent successfully!");
-      } else {
-        console.error("Error:", data.message);
-        setStatus(`Error: ${data.message || "Something went wrong"}`);
-      }
+      setStatus("Message sent successfully!");
+      console.log("Success:", response.data);
     } catch (error) {
-      console.error("Error:", error);
-      setStatus("Failed to send message.");
+      console.error("Error:", error.response?.data || error.message);
+      setStatus(`Error: ${error.response?.data?.message || "Something went wrong"}`);
     }
   };
 
