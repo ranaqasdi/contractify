@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex flex-col items-center md:w-[70%] w-[90%] gap-y-4">
           <h2 className="text-[#5d17eb] font-semibold lg:text-xl text-lg text-center ">TEMPLIK THE EASIEST ONLINE FORM BUILDER</h2>
           <h2 className="text-[#5d17eb] font-semibold lg:text-6xl text-5xl text-center">Powerful forms get it done.</h2>
-          <p className="text-3xl font-medium text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
+          <p className="lg:text-3xl text-xl font-medium text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
           <Link href={"/forms"}>
             <button className='bg-[#5d17eb] text-white font-bold py-5 px-12 mt-10 hover:bg-[#5d17eb] transition-colors duration-500'>
               Create New Form

@@ -25,7 +25,7 @@ export default function Home() {
 
 
       const response = await axios.post(
-        "https://gold-hawk-364161.hostingersite.com/generate-pdf.php",
+        "https://violet-stork-183808.hostingersite.com/generate-pdf.php",
         { html: rawHtml() },
         { responseType: "blob" }
       );
