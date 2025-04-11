@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Page() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
@@ -16,11 +16,11 @@ export default function Page() {
 
     try {
       const response = await axios.post(
-        "https://violet-stork-183808.hostingersite.com/contact.php", // Your PHP backend URL
-        formData, 
+        "https://violet-stork-183808.hostingersite.com/contact.php",
+        formData,
         {
           headers: {
-            "Content-Type": "application/json", // Sending JSON data
+            "Content-Type": "application/json",
           },
         }
       );
@@ -34,63 +34,105 @@ export default function Page() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Your Name
-          </label>
-          <input
-            name="name"
-            type="text"
-            placeholder="Enter Your Name Here"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full border-gray-300 border rounded-md shadow-sm py-4 px-2"
-          />
+    <div className="bg-[#f9f6ff] -mt-7">
+      {/* Header */}
+      <section className="py-16 px-6 text-center">
+        <h1 className="text-5xl font-bold text-[#5d17eb] mb-4">Let's Talk</h1>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          Have a question or want to work together? Fill out the form and we'll get back to you within 24 hours.
+        </p>
+      </section>
+
+      {/* Contact Form + Info */}
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 pb-20">
+        {/* Form */}
+        <div className="bg-white p-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-semibold mb-6 text-[#5d17eb]">Send Us a Message</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Your Name
+              </label>
+              <input
+                name="name"
+                type="text"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full border-gray-300 border rounded-lg py-4 px-4 shadow-sm"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Your Email
+              </label>
+              <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="john@example.com"
+                required
+                className="mt-1 w-full border-gray-300 border rounded-lg py-4 px-4 shadow-sm"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                Message
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="How can we help you?"
+                rows="5"
+                required
+                className="mt-1 w-full border-gray-300 border rounded-lg py-4 px-4 shadow-sm"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#5d17eb] hover:bg-[#4313c3] text-white py-3 rounded-lg text-lg font-semibold shadow"
+            >
+              Send Message
+            </button>
+          </form>
+
+          {status && <p className="mt-4 text-center text-[#5d17eb] font-medium">{status}</p>}
         </div>
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Your Email
-          </label>
-          <input
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter Your Email Here"
-            required
-            className="mt-1 block w-full border-gray-300 border rounded-md shadow-sm py-4 px-2"
-          />
+        {/* Info Panel */}
+        <div className="bg-[#5d17eb] text-white p-8 rounded-xl shadow-md flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-4 text-white">Contact Information</h3>
+          <p className="mb-4 text-white">📍 1234 Tech Street, Suite 500, New York, NY</p>
+          <p className="mb-4 text-white">📞 +1 (234) 567-8900</p>
+          <p className="mb-4 text-white">✉️ support@example.com</p>
+          <div className="mt-6 space-x-4">
+            <a href="https://www.facebook.com/share/18oghwwZyE/?mibextid=wwXIfr" className="inline-block bg-white text-[#5d17eb] px-4 py-2 rounded-lg font-medium shadow hover:bg-gray-100">Facebook</a>
+            <a href="https://www.instagram.com/usetemplik" className="inline-block bg-white text-[#5d17eb] px-4 py-2 rounded-lg font-medium shadow hover:bg-gray-100">Instagram</a>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-            Message
-          </label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter Your Message Here"
-            rows="5"
-            required
-            className="mt-1 block w-full border-gray-300 border rounded-md shadow-sm py-4 px-2"
-          ></textarea>
-        </div>
 
-        <button
-          type="submit"
-          className="inline-flex justify-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+
+      {/* CTA Footer */}
+      <section className="bg-[#f0eaff] py-32 text-center px-6">
+        <h2 className="text-3xl font-bold text-[#5d17eb] mb-4">Ready to Get Started?</h2>
+        <p className="text-gray-700 mb-6 max-w-xl mx-auto">
+          Whether you're looking for support, partnerships, or just want to say hello — we're here to help.
+        </p>
+        <a
+          href="#"
+          className="inline-block bg-[#5d17eb] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#4313c3] shadow-md"
         >
-          Send Message
-        </button>
-      </form>
-
-      {status && <p className="mt-4 text-center text-lg text-gray-700">{status}</p>}
+          Start a Project
+        </a>
+      </section>
     </div>
   );
 }
