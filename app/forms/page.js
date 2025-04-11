@@ -55,7 +55,7 @@ function Forms(props) {
                 <div className='flex xl:w-[70%] w-[90%] lg:flex-row flex-col gap-y-10 justify-between gap-x-14 mt-14'>
                     <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
                         <Link href={"/forms/resume/1"}>
-                            <img className='w-full h-[250px] object-cover object-top' src="/images/resume01.png" alt="" />
+                            <img className='w-full h-[250px] object-cover object-left-top' src="/images/resume01.png" alt="" />
                             <div className=' py-5 px-6'>
 
                                 <h2 className='text-[#5d17eb] font-semibold text-xl mb-2'>Resume Templates</h2>
