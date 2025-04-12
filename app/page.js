@@ -9,8 +9,8 @@ export default function Home() {
       <section className="flex justify-center py-20 ">
         <div className="flex flex-col items-center md:w-[70%] w-[90%] gap-y-8">
           <h2 className="text-[#5e17ebe1] font-semibold lg:text-xl text-lg text-center ">TEMPLIK THE EASIEST ONLINE FORM BUILDER</h2>
-          <h2 className="text-[#5d17eb] font-semibold lg:text-6xl text-5xl text-center">Powerful forms get it done.</h2>
-          <p className="lg:text-3xl text-xl font-medium text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
+          <h2 className="text-[#5d17eb] font-semibold lg:text-6xl text-5xl text-center my-4">Powerful forms get it done.</h2>
+          <p className="lg:text-3xl text-xl font-normal text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
           <Link href={"/forms"}>
             <button className='bg-[#5d17eb] text-white font-bold py-5 px-12 mt-10 hover:bg-[#5d17eb] transition-colors duration-500'>
               Create New Form
@@ -104,7 +104,18 @@ export default function Home() {
     ))}
   </div>
 </section>
-
+<section className="bg-[#f0eaff] py-32 text-center px-6">
+        <h2 className="text-3xl font-bold text-[#5d17eb] mb-4">Ready to Simplify Your Paperwork?</h2>
+        <p className="text-gray-700 mb-6 max-w-xl mx-auto">
+        Effortless, professional documents for freelancers, startups, and businesses. Save time, money, and avoid legal stress—start now.
+        </p>
+        <Link
+          href="/forms"
+          className="inline-block bg-[#5d17eb] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#4313c3] shadow-md"
+        >
+           Start for Free
+        </Link>
+      </section>
        
 
       </div>

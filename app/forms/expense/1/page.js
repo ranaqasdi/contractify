@@ -241,7 +241,7 @@ return <iframe ref={iframeRef} title="HTML Preview" className="h-full min-h-[600
 
   return (
     <>
-       <div className=" flex lg:my-16 lg:mx-10 m-3 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
+       <div className=" flex lg:my-16 lg:mx-10 m-5 my-10  rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
         <div className="overflow-y-auto lg:p-20 py-10 px-8 flex gap-y-5 lg:max-h-[800px] max-h-fit flex-col lg:w-5/12 lg:order-1 order-2  w-full bg-[#fbfbfb]">
           <h2 className="text-2xl font-bold  text-[#5d17eb]">Edit Legal Document</h2>

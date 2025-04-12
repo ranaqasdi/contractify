@@ -225,7 +225,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex lg:my-10 lg:mx-3 m-1 rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
+      <div className="flex  lg:my-16 lg:mx-10 m-5 my-10    rounded-xl overflow-hidden shadow-md lg:flex-row flex-col gap-y-10">
         {/* Editing Section */}
         <div className="overflow-y-auto lg:w-5/12 lg:order-1 order-2 w-full lg:p-20 py-10 px-8 flex gap-y-5 lg:max-h-[800px] max-h-fit  flex-col  bg-[#fbfbfb] ">
           <h2 className="text-2xl font-bold text-[#5d17eb]">Edit Legal Document</h2>

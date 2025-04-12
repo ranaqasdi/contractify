@@ -16,30 +16,30 @@ function page(props) {
     <section className='flex items-center flex-col py-20'>
     <h2 className="text-blue-950 mb-12 font-bold text-3xl" >Which Template Of Document You Like The Most?</h2>
         <div className='flex lg:w-[70%] w-[90%] lg:flex-row flex-col gap-y-10 justify-between gap-x-14'>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300 bg-[#5d17eb15] '>
                 <Link href={"/forms/resume/1"}>
-                <img className='w-full h-[250px] object-contain object-top' src="/images/resume01.png" alt="" />
-                <div className=' py-5 px-6 bg-[#5d17eb15]'>
+                <img className='w-full h-[250px] object-contain object-top bg-white' src="/images/resume01.png" alt="" />
+                <div className=' py-5 px-6 '>
 
                 <h2 className='text-blue-950 font-semibold text-xl'>Resume Template</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                 </div>
                 </Link>
             </div>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300 bg-[#5d17eb15] '>
             <Link href={"/"}>
-                <img className='w-full h-[250px] object-contain object-top' src="/images/5.png" alt="" />
-                <div className=' py-5 px-6 bg-[#5d17eb15]'>
+                <img className='w-full h-[250px] object-contain object-top bg-white' src="/images/5.png" alt="" />
+                <div className=' py-5 px-6 '>
 
                 <h2 className='text-blue-950 font-semibold text-xl'>Template 2</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>
                 </div>
                 </Link>
             </div>
-            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300'>
+            <div className='flex flex-col gap-y-3 border rounded shadow hover:shadow-lg hover:shadow-purple-100 transition duration-300 bg-[#5d17eb15] '>
             <Link href={"/"}>
-                <img className='w-full h-[250px] object-contain object-top' src="/images/5.png" alt="" />
-                <div className=' py-5 px-6 bg-[#5d17eb15]'>
+                <img className='w-full h-[250px] object-contain object-top bg-white' src="/images/5.png" alt="" />
+                <div className=' py-5 px-6 '>
 
                 <h2 className='text-blue-950 font-semibold text-xl'>Template 3</h2>
                 <p className='mt-1'>Easily customize this Boarding Pass Template for your travel agency, airline, or as a unique gift. Download or print PDF plane tickets in...</p>

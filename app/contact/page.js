@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -108,9 +109,8 @@ export default function ContactPage() {
         {/* Info Panel */}
         <div className="bg-[#5d17eb] text-white p-8 rounded-xl shadow-md flex flex-col justify-center">
           <h3 className="text-2xl font-bold mb-4 text-white">Contact Information</h3>
-          <p className="mb-4 text-white">📍 1234 Tech Street, Suite 500, New York, NY</p>
-          <p className="mb-4 text-white">📞 +1 (234) 567-8900</p>
-          <p className="mb-4 text-white">✉️ support@example.com</p>
+          
+          <p className="mb-4 text-white">✉️ info@templik.com</p>
           <div className="mt-6 space-x-4">
             <a href="https://www.facebook.com/share/18oghwwZyE/?mibextid=wwXIfr" className="inline-block bg-white text-[#5d17eb] px-4 py-2 rounded-lg font-medium shadow hover:bg-gray-100">Facebook</a>
             <a href="https://www.instagram.com/usetemplik" className="inline-block bg-white text-[#5d17eb] px-4 py-2 rounded-lg font-medium shadow hover:bg-gray-100">Instagram</a>
@@ -122,16 +122,16 @@ export default function ContactPage() {
 
       {/* CTA Footer */}
       <section className="bg-[#f0eaff] py-32 text-center px-6">
-        <h2 className="text-3xl font-bold text-[#5d17eb] mb-4">Ready to Get Started?</h2>
+        <h2 className="text-3xl font-bold text-[#5d17eb] mb-4">Ready to Simplify Your Paperwork?</h2>
         <p className="text-gray-700 mb-6 max-w-xl mx-auto">
-          Whether you're looking for support, partnerships, or just want to say hello — we're here to help.
+        Effortless, professional documents for freelancers, startups, and businesses. Save time, money, and avoid legal stress—start now.
         </p>
-        <a
-          href="#"
+        <Link
+          href="/forms"
           className="inline-block bg-[#5d17eb] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#4313c3] shadow-md"
         >
-          Start a Project
-        </a>
+           Start for Free
+        </Link>
       </section>
     </div>
   );
