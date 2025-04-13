@@ -34,10 +34,10 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex space-x-6">
-          <Link href="/" className="text-[#5d17eb] font-medium hover:text-gray-900">Home</Link>
-          <Link href="/about" className="text-[#5d17eb] font-medium hover:text-gray-900">About Us</Link>
-          <Link href="/forms" className="text-[#5d17eb] font-medium hover:text-gray-900">Create New Form</Link>
-          <Link href="/contact" className="text-[#5d17eb] font-medium hover:text-gray-900">Contact Us</Link>
+          <Link href="/"  onClick={() => setIsOpen(false)}  className="text-[#5d17eb] font-medium hover:text-gray-900">Home</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}  className="text-[#5d17eb] font-medium hover:text-gray-900">About Us</Link>
+          <Link href="/forms"  onClick={() => setIsOpen(false)}  className="text-[#5d17eb] font-medium hover:text-gray-900">Create New Form</Link>
+          <Link href="/contact"  onClick={() => setIsOpen(false)}  className="text-[#5d17eb] font-medium hover:text-gray-900">Contact Us</Link>
         </nav>
 
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -50,10 +50,10 @@ export default function Header() {
           <div className="flex justify-end">
             {/* You can add a close button here if you'd like */}
           </div>
-          <Link href="/" className="block text-white text-center">Home</Link>
-          <Link href="/about" className="block text-white text-center">About Us</Link>
-          <Link href="/forms" className="block text-white text-center">Create New Form</Link>
-          <Link href="/contact" className="block text-white text-center">Contact Us</Link>
+          <Link href="/"  onClick={() => setIsOpen(false)}  className="block text-white text-center">Home</Link>
+          <Link href="/about"  onClick={() => setIsOpen(false)}  className="block text-white text-center">About Us</Link>
+          <Link href="/forms"  onClick={() => setIsOpen(false)}  className="block text-white text-center">Create New Form</Link>
+          <Link href="/contact"  onClick={() => setIsOpen(false)}  className="block text-white text-center">Contact Us</Link>
         </nav>
       )}
     </header>

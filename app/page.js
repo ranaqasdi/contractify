@@ -6,8 +6,8 @@ import StatsSection from "./Components/Stats";
 export default function Home() {
   return (
     <>
-      <section className="flex justify-center py-20 ">
-        <div className="flex flex-col items-center md:w-[70%] w-[90%] gap-y-8">
+      <section className="flex justify-center lg:py-20 py-10 ">
+        <div className="flex flex-col items-center md:w-[70%] w-[90%] lg:gap-y-8 gap-y-4">
           <h2 className="text-[#5e17ebe1] font-semibold lg:text-xl text-lg text-center ">TEMPLIK THE EASIEST ONLINE FORM BUILDER</h2>
           <h2 className="text-[#5d17eb] font-semibold lg:text-6xl text-5xl text-center my-4">Powerful forms get it done.</h2>
           <p className="lg:text-3xl text-xl font-normal text-center">We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
